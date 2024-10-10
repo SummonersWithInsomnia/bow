@@ -4,7 +4,7 @@ import { DATASETS } from "./datasets.config";
 
 export class lsh {
     constructor() {
-        throw new Error("Cannot instantiate lsh class.");
+        throw new Error("Cannot instantiate lsh class");
     }
 
     static initAllDatasets() {

@@ -5,7 +5,7 @@ import { lb } from "./local-backend/lb";
 
 export class udc {
     constructor() {
-        throw new Error("Cannot instantiate udc class.");
+        throw new Error("Cannot instantiate udc class");
     }
 
     static async get(path, token, obj) {

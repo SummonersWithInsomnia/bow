@@ -28,7 +28,7 @@ async function PatchProfile(token, jsonObj) {
                 if (updateResult.status === 200) {
                     return Promise.resolve({
                         "status": 200,
-                        "message": "Profile updated."
+                        "message": "Profile Updated"
                     });
                 }
             }
@@ -48,7 +48,7 @@ async function PatchProfile(token, jsonObj) {
                 if (updateResult.status === 200) {
                     return Promise.resolve({
                         "status": 200,
-                        "message": "Profile updated."
+                        "message": "Profile Updated"
                     });
                 }
             }

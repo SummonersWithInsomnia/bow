@@ -11,7 +11,7 @@ import PatchProfile from "./profile-handlers/PatchProfile";
 
 export class lb {
     constructor() {
-        throw new Error("Cannot instantiate lb class.");
+        throw new Error("Cannot instantiate lb class");
     }
 
     static async get(path, token, jsonObj) {

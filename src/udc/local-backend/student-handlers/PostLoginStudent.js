@@ -31,7 +31,7 @@ async function PostLoginStudent(token, jsonObj) {
         } else {
             return Promise.reject({
                 "status": 400,
-                "message": "The Username or Password is Incorrect. Try again."
+                "message": "The Username or Password is Incorrect"
             });
         }
     } else {
