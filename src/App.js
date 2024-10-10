@@ -13,6 +13,13 @@ import ProgramsRoute from "./routes/Programs.route";
 import CoursesRoute from "./routes/Courses.route";
 import ProfileRoute from "./routes/Profile.route";
 import ProfileEditorRoute from "./routes/ProfileEditor.route";
+import CreateCourseRoute from "./routes/CreateCourse.route";
+import CourseManagementRoute from "./routes/CourseManagement.route";
+import ContactTicketViewerRoute from "./routes/ContactTicketViewer.route";
+import StudentListRoute from "./routes/StudentList.route";
+import CourseRegistrationRoute from "./routes/CourseRegistration.route";
+import MyCoursesRoute from "./routes/MyCourses.route";
+import SendContactTicketRoute from "./routes/SendContactTicket.route";
 
 function App() {
 
@@ -36,6 +43,13 @@ function App() {
           <Route path="courses" element={<CoursesRoute />}/>
           <Route path="profile" element={<ProfileRoute />}/>
           <Route path="profile-editor" element={<ProfileEditorRoute />}/>
+          <Route path="create-course" element={<CreateCourseRoute />}/>
+          <Route path="course-management" element={<CourseManagementRoute/>}/>
+          <Route path="contact-ticket-viewer" element={<ContactTicketViewerRoute />}/>
+          <Route path="student-list" element={<StudentListRoute />}/>
+          <Route path="course-registration" element={<CourseRegistrationRoute />}/>
+          <Route path="my-courses" element={<MyCoursesRoute />}/>
+          <Route path="send-contact-ticket" element={<SendContactTicketRoute />}/>
           <Route path="*" element={<NotFoundRoute />}/>
         </Routes>
       </Router>
