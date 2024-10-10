@@ -1,0 +1,15 @@
+[
+  {
+    "id": 0,
+    "type": "admin",
+    "username": "admin0",
+    "password": "admin0",
+    "firstName": "Default",
+    "lastName": "Admin",
+    "email": "admin0@default",
+    "phoneCountryCode": 1,
+    "phoneNumber": 9876543200,
+    "birthday": "2000-01-01",
+    "department": "Software Development"
+  }
+]

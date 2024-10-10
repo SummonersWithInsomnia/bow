@@ -1,0 +1,16 @@
+[
+  {
+    "id": 0,
+    "type": "student",
+    "username": "stu0",
+    "password": "stu0",
+    "firstName": "Default",
+    "lastName": "Student",
+    "email": "stu0@default",
+    "phoneCountryCode": 1,
+    "phoneNumber": 2345678900,
+    "birthday": "2000-01-01",
+    "department": "Software Development",
+    "program": "Certificate (6 months)"
+  }
+]
