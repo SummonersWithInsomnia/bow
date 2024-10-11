@@ -36,3 +36,187 @@
     transform: rotate(360deg);
   }
 }
+
+/* footer */
+footer {
+  background-color: #6CA6C1;
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+footer p {
+  margin: 0 10px;
+  color: #F4E3B2;
+  display: inline;
+}
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #F4E3B2;
+}
+
+footer span {
+  margin: 0 10px;
+}
+
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6CA6C1;
+  padding: 15px 30px;
+}
+
+header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: #F4E3B2;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #F4E3B2;
+  font-size: 16px;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+
+/* Form */
+
+form {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+form h2 {
+  text-align: center;
+  color: #302E41;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+form p {
+  color: black;
+  font-weight:500;
+  text-align: center;
+}
+
+form button[name="btnLogin"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #6CA6C1;
+  color: #F4E3B2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button[name="btnLogin"]:hover {
+  background-color: #5a94ac;
+  color: #ffd700;
+}
+
+form button[name="btnSignup"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #6CA6C1;
+  color: #F4E3B2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button[name="btnSignup"]:hover {
+  background-color: #5a94ac;
+  color: #ffd700;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #dddddd;
+  color: #333333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background-color: #cccccc;
+}
+
+form a {
+  color: #6CA6C1;
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+/* for the dropdown */
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+}
