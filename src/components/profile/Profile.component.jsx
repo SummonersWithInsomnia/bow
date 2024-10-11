@@ -3,7 +3,7 @@ import {udc} from "../../udc/udc";
 import {GUEST_ENTRANCE} from "../../App.config";
 
 function ProfileComponent() {
-    const [userProfile, setuserProfile] = useState({});
+    const [userProfile, setUserProfile] = useState({});
 
     useEffect(() => {
         getUserProfile();
@@ -16,7 +16,7 @@ function ProfileComponent() {
                 .catch((data) => { return data; });
 
             if (result.status === 200) {
-                setuserProfile(result.userdata);
+                setUserProfile(result.userdata);
             } else {
                 localStorage.removeItem("user");
                 window.location.href = GUEST_ENTRANCE;
