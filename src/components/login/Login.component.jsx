@@ -88,7 +88,7 @@ function LoginComponent() {
 
                 <div>
                     <a onClick={switchVersion}>
-                        <i class="fa-solid fa-repeat"></i> Switch to {studentVersion ? "Administrator" : "Student"} Version
+                        <i className="fa-solid fa-repeat"></i> Switch to {studentVersion ? "Administrator" : "Student"} Version
                     </a>
                 </div>
             </div>
