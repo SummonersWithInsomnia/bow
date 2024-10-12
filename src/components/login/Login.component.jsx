@@ -11,6 +11,7 @@ function LoginComponent() {
 
     const switchVersion = () => {
         setStudentVersion(!studentVersion);
+        setLoginMessage("");
     };
 
     const handleUsernameChange = (e) => {
@@ -77,22 +78,19 @@ function LoginComponent() {
                     <div>
                         <button type="submit" name="btnLogin">Log in</button>
                     </div>
-
-                    <div>
-                        {
-                            studentVersion &&
-                            <div>
-                                <p>Not registered yet? <a href="/signup">Sign up</a> now!</p>
-                            </div>
-                        }
-                    </div>
-
-                    <div>
-                        <button onClick={switchVersion}>
-                            Switch to {studentVersion ? "Administrator" : "Student"} Version
-                        </button>
-                    </div>
                 </form>
+                {
+                        studentVersion &&
+                        <div>
+                            <p>Not registered yet? <a href="/signup">Sign up</a> now!</p>
+                        </div>
+                }
+
+                <div>
+                    <a onClick={switchVersion}>
+                        <i class="fa-solid fa-repeat"></i> Switch to {studentVersion ? "Administrator" : "Student"} Version
+                    </a>
+                </div>
             </div>
         </>
     );

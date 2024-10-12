@@ -220,3 +220,7 @@ form select {
   background-color: white;
   cursor: pointer;
 }
+
+a:hover {
+  text-decoration: underline;
+}
