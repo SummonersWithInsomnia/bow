@@ -1,5 +1,4 @@
 import {lsh} from "../lsh/lsh";
-import data from "bootstrap/js/src/dom/data";
 
 async function PatchProfile(token, jsonObj) {
     let query = JSON.parse(jsonObj);
