@@ -9,8 +9,10 @@ function LogoutComponent() {
 
     return (
         <>
-            <h2>Log out</h2>
-            <p>Logging out...</p>
+            <form>
+                <h2>Log out</h2>
+                <p>Logging out...</p>
+            </form>
         </>
     );
 }
