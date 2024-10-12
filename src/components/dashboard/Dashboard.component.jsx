@@ -32,9 +32,9 @@ function DashboardComponent() {
                 <>
                     <h2>Welcome to Dashboard</h2>
                     <p>Hello, {userDetails.firstName} {userDetails.lastName}.</p>
-                    <p>Your {JSON.parse(localStorage.getItem("user")).type} ID is {userDetails.id}.</p>
+                    <p>Your {userDetails.type} ID is {userDetails.id}.</p>
                     <p>Your department is {userDetails.department}.</p>
-                    {JSON.parse(localStorage.getItem("user")).type === "student" && <p>Your program is {userDetails.program}.</p>}
+                    {userDetails.type === "student" && <p>Your program is {userDetails.program}.</p>}
                 </>
             ) : (
                 <>

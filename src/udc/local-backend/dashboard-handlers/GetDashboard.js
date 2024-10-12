@@ -13,6 +13,7 @@ async function GetDashboard(token, jsonObj) {
                 "message": "OK",
                 "userdata": {
                     id: result.data[0].id,
+                    type: result.data[0].type,
                     firstName: result.data[0].firstName,
                     lastName: result.data[0].lastName,
                     department: result.data[0].department,
@@ -33,9 +34,9 @@ async function GetDashboard(token, jsonObj) {
             return Promise.resolve({
                 "status": 200,
                 "message": "OK",
-                "userType": "admin",
                 "userdata": {
                     id: result.data[0].id,
+                    type: result.data[0].type,
                     firstName: result.data[0].firstName,
                     lastName: result.data[0].lastName,
                     department: result.data[0].department
