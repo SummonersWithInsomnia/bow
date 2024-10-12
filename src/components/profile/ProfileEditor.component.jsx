@@ -222,6 +222,10 @@ function ProfileEditorComponent() {
                         <div>
                             <button type="submit" name="btnSignup">Save</button>
                         </div>
+
+                        <div>
+                            <a href="/profile">Back to My Profile</a>
+                        </div>
                     </form>
                 </>
             ) : (
