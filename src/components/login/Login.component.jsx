@@ -77,7 +77,7 @@ function LoginComponent() {
                     </div>
 
                     <div>
-                        <button type="submit" name="btnLogin">Log in</button>
+                        <button type="submit" name="btnSubmit">Log in</button>
                     </div>
                 </form>
                 {

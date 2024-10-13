@@ -153,7 +153,7 @@ form p {
   text-align: center;
 }
 
-form button[name="btnLogin"] {
+form button[name="btnSubmit"] {
   width: 100%;
   padding: 10px;
   background-color: #6CA6C1;
@@ -164,23 +164,7 @@ form button[name="btnLogin"] {
   font-size: 16px;
 }
 
-form button[name="btnLogin"]:hover {
-  background-color: #5a94ac;
-  color: #ffd700;
-}
-
-form button[name="btnSignup"] {
-  width: 100%;
-  padding: 10px;
-  background-color: #6CA6C1;
-  color: #F4E3B2;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-form button[name="btnSignup"]:hover {
+form button[name="btnSubmit"]:hover {
   background-color: #5a94ac;
   color: #ffd700;
 }

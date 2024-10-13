@@ -30,11 +30,13 @@ function DashboardComponent() {
         <>
             {JSON.parse(localStorage.getItem("user")) ? (
                 <>
+                    <form>
                     <h2>Welcome to Dashboard</h2>
                     <p>Hello, {userDetails.firstName} {userDetails.lastName}.</p>
                     <p>Your {userDetails.type} ID is {userDetails.id}.</p>
                     <p>Your department is {userDetails.department}.</p>
                     {userDetails.type === "student" && <p>Your program is {userDetails.program}.</p>}
+                    </form>
                 </>
             ) : (
                 <>

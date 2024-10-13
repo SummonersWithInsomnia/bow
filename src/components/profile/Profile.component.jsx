@@ -31,8 +31,9 @@ function ProfileComponent() {
         <>
             {JSON.parse(localStorage.getItem("user")) ? (
                 <>
+                    <form>
                     <div>
-                        <h2>Profile</h2>
+                        <h2>My Profile</h2>
                         <p>First Name: {userProfile.firstName}</p>
                         <p>Last Name: {userProfile.lastName}</p>
                         <p>Email: {userProfile.email}</p>
@@ -40,8 +41,10 @@ function ProfileComponent() {
                         <p>Birthday: {userProfile.birthday}</p>
                     </div>
                     <div>
+                        <br />
                         <Link to="/profile-editor">Edit My Profile</Link>
                     </div>
+                    </form>
                 </>
             ) : (
                 <>

@@ -316,7 +316,7 @@ function SignupComponent() {
                     </div>
 
                     <div>
-                        <button type="submit" name="btnSignup">Sign up</button>
+                        <button type="submit" name="btnSubmit">Sign up</button>
                     </div>
                 </form>
             </div>
