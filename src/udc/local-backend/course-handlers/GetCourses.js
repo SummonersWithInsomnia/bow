@@ -11,6 +11,7 @@ async function GetCourses(token, jsonObj) {
         };
 
         let limitedOtherQueryItems = {
+            id: query.id,
             department: query.department,
             program: query.program,
             term: query.term
@@ -20,13 +21,13 @@ async function GetCourses(token, jsonObj) {
         let safeOtherQueryItems = {};
 
         for (let [key, value] of Object.entries(limitedNameAndCodeQueryItems)) {
-            if (limitedNameAndCodeQueryItems[key] !== "") {
+            if (limitedNameAndCodeQueryItems[key] !== "" && limitedNameAndCodeQueryItems[key] !== undefined) {
                 safeNameAndCodeQueryItems[key] = value;
             }
         }
 
         for (let [key, value] of Object.entries(limitedOtherQueryItems)) {
-            if (limitedOtherQueryItems[key] !== "") {
+            if (limitedOtherQueryItems[key] !== "" && limitedOtherQueryItems[key] !== undefined) {
                 safeOtherQueryItems[key] = value;
             }
         }
