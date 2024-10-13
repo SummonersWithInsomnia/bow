@@ -6,7 +6,7 @@ async function GetTickets(token, jsonObj) {
         let uid = parseInt(token.substring(5));
         let result = await lsh.read("admins", { id: uid })
             .then((data) => { return data; });
-        if (result.status === 200 && result.data.length === 1) {
+        if (result.status === 200 && result.data.length === 1 && result.data[0].id === uid) {
             let ticketResult = await lsh.read("tickets", {})
                 .then((data) => { return data; })
                 .catch((data) => { return data; });
