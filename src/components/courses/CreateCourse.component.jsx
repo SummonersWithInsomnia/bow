@@ -19,7 +19,6 @@ function CreateCourseComponent() {
     });
 
     useEffect(() => {
-        console.log(newCourseData);
 
         if (!isValidEndDate()) {
             setEndDateTip("End date cannot be earlier than start date.");
