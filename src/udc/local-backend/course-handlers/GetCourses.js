@@ -37,7 +37,6 @@ async function GetCourses(token, jsonObj) {
             .then((data) => { return data;})
             .catch((data) => { return data; });
 
-        console.log(result.data);
 
         if (result.status === 200 && result.data.length > 0) {
             let optimisedResult = [];
@@ -56,7 +55,6 @@ async function GetCourses(token, jsonObj) {
                 optimisedResult = result.data;
             }
 
-            console.log(optimisedResult);
 
             return Promise.resolve({
                 "status": 200,
