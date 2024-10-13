@@ -86,7 +86,7 @@ function CourseDetailsComponent({id}) {
                                         </>)
                                     }
                                 </>) : (<>
-                                    <p>Interested in this course? <Link to="/login">Log in</Link> or <Link to="/signup">Sign up</Link> to register this course now!</p>
+                                    <p>Interested in this course? <Link to="/login">Log in</Link> or <Link to="/signup">Sign up</Link> to register it now!</p>
                                 </>)
                             }
                         </div>
