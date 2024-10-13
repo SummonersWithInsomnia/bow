@@ -3,6 +3,7 @@ const TicketComponent = ({tickets}) => (
         {tickets.map((ticket) => (
             <tr key={ticket.id}>
                 <td>{ticket.id}</td>
+                <td>{ticket.student}</td>
                 <td>{ticket.firstName}</td>
                 <td>{ticket.lastName}</td>
                 <td>{ticket.email}</td>

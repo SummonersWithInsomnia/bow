@@ -52,6 +52,7 @@ function TicketViewerComponent() {
                                 <thead>
                                 <tr>
                                     <th>Ticket ID</th>
+                                    <th>Student ID</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Email</th>
