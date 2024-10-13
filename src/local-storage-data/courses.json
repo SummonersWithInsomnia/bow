@@ -15,7 +15,8 @@
     "campus": "Calgary - Main Campus",
     "deliveryMethod": "Real-time In-person",
     "maxSeats": 50,
-    "availableSeats": 49
+    "availableSeats": 49,
+    "deleted": false
   },
   {
     "id": 1,
@@ -33,7 +34,8 @@
     "campus": "Calgary - Main Campus",
     "deliveryMethod": "Real-time In-person",
     "maxSeats": 50,
-    "availableSeats": 50
+    "availableSeats": 50,
+    "deleted": false
   },
   {
     "id": 2,
@@ -51,7 +53,8 @@
     "campus": "Calgary - Main Campus",
     "deliveryMethod": "Real-time Online",
     "maxSeats": 50,
-    "availableSeats": 50
+    "availableSeats": 50,
+    "deleted": false
   },
   {
     "id": 3,
@@ -69,6 +72,7 @@
     "campus": "Calgary - Main Campus",
     "deliveryMethod": "Anytime Online",
     "maxSeats": 50,
-    "availableSeats": 50
+    "availableSeats": 50,
+    "deleted": true
   }
 ]
