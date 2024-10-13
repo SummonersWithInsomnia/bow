@@ -52,17 +52,33 @@ export class lsh {
                     "data": JSON.parse(localStorage.getItem(datasetName))
                 });
             } else {
+                // const dataset = JSON.parse(localStorage.getItem(datasetName));
+                // let resultData = [];
+                // let vaildQuery = {};
+                // for (let [key, value] of Object.entries(queryObj)) {
+                //     if (queryObj[key] !== "") {
+                //         vaildQuery[key] = value;
+                //     }
+                // }
+                // for (let i = 0; i < dataset.length; i++) {
+                //     for (let [key, value] of Object.entries(vaildQuery)) {
+                //         if (dataset[i][key] === value) {
+                //             if (!resultData.some(item => item.id === dataset[i].id)) {
+                //                 resultData.push(dataset[i]);
+                //             }
+                //         }
+                //     }
+                // }
+
                 const dataset = JSON.parse(localStorage.getItem(datasetName));
-                let resultData = [];
-                for (let i = 0; i < dataset.length; i++) {
-                    for (let [key, value] of Object.entries(queryObj)) {
-                        if (dataset[i][key] === value) {
-                            if (!resultData.some(item => item.id === dataset[i].id)) {
-                                resultData.push(dataset[i]);
-                            }
-                        }
-                    }
-                }
+                const validQuery = Object.fromEntries(
+                    Object.entries(queryObj).filter(([_, value]) => value !== "")
+                );
+
+                const resultData = dataset.filter(item =>
+                    Object.entries(validQuery).every(([key, value]) => item[key] === value)
+                );
+
                 return Promise.resolve({
                     "status": 200,
                     "message": "OK",
