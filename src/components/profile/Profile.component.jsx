@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {udc} from "../../udc/udc";
 import {GUEST_ENTRANCE} from "../../App.config";
+import {Link} from "react-router-dom";
 
 function ProfileComponent() {
     const [userProfile, setUserProfile] = useState({});
@@ -39,7 +40,7 @@ function ProfileComponent() {
                         <p>Birthday: {userProfile.birthday}</p>
                     </div>
                     <div>
-                        <a href="/profile-editor">Edit My Profile</a>
+                        <Link to="/profile-editor">Edit My Profile</Link>
                     </div>
                 </>
             ) : (

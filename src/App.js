@@ -2,7 +2,7 @@ import './App.css';
 import { lsh } from "./udc/local-backend/lsh/lsh";
 import FooterComponent from "./components/footer/Footer.component";
 import HeaderComponent from "./components/header/Header.component";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import NotFoundRoute from "./routes/NotFound.route";
 import IndexRoute from "./routes/Index.route";
 import LoginRoute from "./routes/Login.route";
@@ -32,7 +32,6 @@ function App() {
 
       <HeaderComponent />
 
-      <Router>
         <Routes>
           <Route path="/" element={<IndexRoute />}/>
           <Route path="signup" element={<SignupRoute />}/>
@@ -52,7 +51,6 @@ function App() {
           <Route path="contact-ticket-sender" element={<ContactTicketSenderRoute />}/>
           <Route path="*" element={<NotFoundRoute />}/>
         </Routes>
-      </Router>
 
       <FooterComponent />
 

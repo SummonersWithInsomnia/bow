@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { udc } from "../../udc/udc";
 import { USER_LOGGED_IN_ENTRANCE } from "../../App.config";
+import {Link} from "react-router-dom";
 
 function LoginComponent() {
 
@@ -82,7 +83,7 @@ function LoginComponent() {
                 {
                         studentVersion &&
                         <div>
-                            <p>Not registered yet? <a href="/signup">Sign up</a> now!</p>
+                            <p>Not registered yet? <Link to="/signup">Sign up</Link> now!</p>
                         </div>
                 }
 

@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {udc} from "../../udc/udc";
 import {GUEST_ENTRANCE} from "../../App.config";
+import {Link} from "react-router-dom";
 
 function ProfileEditorComponent() {
     const [userProfile, setUserProfile] = useState({});
@@ -224,7 +225,7 @@ function ProfileEditorComponent() {
                         </div>
 
                         <div>
-                            <a href="/profile">Back to My Profile</a>
+                            <Link to="/profile">Back to My Profile</Link>
                         </div>
                     </form>
                 </>
