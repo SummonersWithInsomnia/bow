@@ -11,6 +11,7 @@ import PatchProfile from "./profile-handlers/PatchProfile";
 import GetUserInfo from "./user-handlers/GetUserInfo";
 import PostSendTicket from "./ticket-handlers/PostSendTicket";
 import GetTickets from "./ticket-handlers/GetTickets";
+import PostCreateCourse from "./course-handlers/PostCreateCourse";
 
 export class lb {
     constructor() {
@@ -52,6 +53,9 @@ export class lb {
 
             case "send-ticket":
                 return await PostSendTicket(token, jsonObj);
+
+            case "create-course":
+                return await PostCreateCourse(token, jsonObj);
 
             default:
                 return await UnreachablePath();
