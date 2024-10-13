@@ -1,49 +1,112 @@
 import {useEffect, useState} from "react";
 import {udc} from "../../udc/udc";
+import CourseComponent from "./Course.component";
+import SearchBoxComponent from "../tools/SearchBox.component";
+import DropdownFilterComponent from "../tools/DropdownFilter.component";
 
 function CoursesComponent() {
     const [courseData, setCourseData] = useState([]);
+    const [searchQuery, setSearchQuery] = useState({
+        name: "",
+        code: "",
+        department: "",
+        program: "",
+        term: ""
+    });
 
     useEffect(() => {
         getCourseData();
     }, []);
 
+
     const getCourseData = async () => {
         let result = await udc.get("courses", "", {})
-                .then((data) => { return data })
-                .catch((data) => { return data });
+            .then((data) => { return data })
+            .catch((data) => { return data });
 
         if (result.status === 200) {
             setCourseData(result.data);
         }
     }
 
+    const onSearchCourseNameOrCodeChange = (e) => {
+        setSearchQuery({...searchQuery,
+            "name": e.target.value,
+            "code": e.target.value
+        });
+    };
+    const onDepartmentChange = (e) => {
+        setSearchQuery({...searchQuery,
+            "department": e.target.value
+        });
+    };
+
+    const onProgramChange = (e) => {
+        setSearchQuery({...searchQuery,
+            "program": e.target.value
+        });
+    };
+
+    const onTermChange = (e) => {
+        setSearchQuery({...searchQuery,
+            "term": e.target.value
+        });
+    };
+
+    useEffect(() => {
+        getSearchCourseData(searchQuery);
+    }, [searchQuery]);
+
+    const getSearchCourseData = async (searchQuery) => {
+        let result = await udc.get("courses", "", searchQuery)
+            .then((data) => { return data; })
+            .catch((data) => { return data; });
+
+        if (result.status === 200) {
+            setCourseData(result.data);
+        }
+    };
 
     return (
         <>
-            {
-                courseData.map(course => (
-                    <div key={course.id}>
-                        <h2>Course: {course.name}</h2>
-                        <p>Code: {course.code}</p>
-                        <p>Description: {course.description}</p>
-                        <p>Department: {course.department}</p>
-                        <p>Program: {course.program}</p>
-                        <p>Term: {course.term}</p>
-                        <p>Start Date: {course.startDate}</p>
-                        <p>End Date: {course.endDate}</p>
-                        <p>Week Day: {course.weekDay}</p>
-                        <p>Start Time: {course.startTime}</p>
-                        <p>End Date: {course.endTime}</p>
-                        <p>Campus: {course.campus}</p>
-                        <p>Delivery Method: {course.deliveryMethod}</p>
-                        <p>Max Seats: {course.maxSeats}</p>
-                        <p>Available Seats: {course.availableSeats}</p>
-                    </div>
-                ))
-            }
+            <div>
+                <h2>Courses</h2>
+            </div>
+
+            <div>
+                <SearchBoxComponent placeholder={"Course Name or Code..."} onChangeHandler={onSearchCourseNameOrCodeChange} />
+                <DropdownFilterComponent friendlyName="Department" options={["Software Development"]} onChangeHandler={onDepartmentChange} />
+                <DropdownFilterComponent friendlyName="Program" options={["Certificate (6 months)", "Post-Diploma (1 year)", "Diploma (2 years)"]} onChangeHandler={onProgramChange} />
+                <DropdownFilterComponent friendlyName="Term" options={["Fall", "Winter", "Spring", "Summer"]} onChangeHandler={onTermChange} />
+            </div>
+
+            <div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        <th>Course Code</th>
+                        <th>Department</th>
+                        <th>Program</th>
+                        <th>Term</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Week Day</th>
+                        <th>Start Time of Day</th>
+                        <th>End Time of Day</th>
+                        <th>Delivery Method</th>
+                        <th>Available Seats</th>
+                        <th>Details</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {courseData.length !== 0 && <CourseComponent courses={courseData}></CourseComponent>}
+                    </tbody>
+                </table>
+            </div>
         </>
     );
 }
 
-export default CoursesComponent
+export default CoursesComponent;
