@@ -18,6 +18,7 @@ import ContactTicketViewerRoute from "./routes/ContactTicketViewer.route";
 import StudentListRoute from "./routes/StudentList.route";
 import MyCoursesRoute from "./routes/MyCourses.route";
 import ContactTicketSenderRoute from "./routes/ContactTicketSender.route";
+import CourseDetailsRoute from "./routes/CourseDetails.route";
 
 function App() {
 
@@ -32,19 +33,20 @@ function App() {
 
         <Routes>
           <Route path="/" element={<IndexRoute />}/>
-          <Route path="signup" element={<SignupRoute />}/>
-          <Route path="login" element={<LoginRoute />}/>
-          <Route path="dashboard" element={<DashboardRoute />}/>
-          <Route path="logout" element={<LogoutRoute />}/>
-          <Route path="programs" element={<ProgramsRoute />}/>
-          <Route path="courses" element={<CoursesRoute />}/>
-          <Route path="profile" element={<ProfileRoute />}/>
-          <Route path="profile-editor" element={<ProfileEditorRoute />}/>
-          <Route path="create-course" element={<CreateCourseRoute />}/>
-          <Route path="contact-ticket-viewer" element={<ContactTicketViewerRoute />}/>
-          <Route path="student-list" element={<StudentListRoute />}/>
-          <Route path="my-courses" element={<MyCoursesRoute />}/>
-          <Route path="contact-ticket-sender" element={<ContactTicketSenderRoute />}/>
+          <Route path="/signup" element={<SignupRoute />}/>
+          <Route path="/login" element={<LoginRoute />}/>
+          <Route path="/dashboard" element={<DashboardRoute />}/>
+          <Route path="/logout" element={<LogoutRoute />}/>
+          <Route path="/programs" element={<ProgramsRoute />}/>
+          <Route path="/courses" element={<CoursesRoute />}/>
+          <Route path="/profile" element={<ProfileRoute />}/>
+          <Route path="/profile-editor" element={<ProfileEditorRoute />}/>
+          <Route path="/create-course" element={<CreateCourseRoute />}/>
+          <Route path="/contact-ticket-viewer" element={<ContactTicketViewerRoute />}/>
+          <Route path="/student-list" element={<StudentListRoute />}/>
+          <Route path="/my-courses" element={<MyCoursesRoute />}/>
+          <Route path="/contact-ticket-sender" element={<ContactTicketSenderRoute />}/>
+          <Route path="/course-details/:id" element={<CourseDetailsRoute />}/>
           <Route path="*" element={<NotFoundRoute />}/>
         </Routes>
 
