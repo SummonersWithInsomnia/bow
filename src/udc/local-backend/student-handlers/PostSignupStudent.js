@@ -53,7 +53,7 @@ async function PostSignupStudent(token, jsonObj) {
         } else {
             return Promise.reject({
                 "status": 400,
-                "message": "The Username is Used"
+                "message": "The Username is Already Used"
             });
         }
 
