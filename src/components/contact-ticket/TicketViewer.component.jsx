@@ -46,29 +46,36 @@ function TicketViewerComponent() {
             {JSON.parse(localStorage.getItem("user")) ? (
                 <>
                     {userInfo.type === "admin" ? (
-                        <div>
-                            <h2>Contact Ticket Viewer</h2>
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>Ticket ID</th>
-                                    <th>Student ID</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email</th>
-                                    <th>Created Date</th>
-                                    <th>Created Time</th>
-                                    <th>Text</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {
-                                    ticketData.length !== 0 &&
-                                    <TicketComponent tickets={ticketData}></TicketComponent>
-                                }
-                                </tbody>
-                            </table>
-                        </div>
+                        <>
+                            <div>
+                                <h2>Contact Ticket Viewer</h2>
+                            </div>
+
+                            <div></div>
+
+                            <div>
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Ticket ID</th>
+                                        <th>Student ID</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Created Date</th>
+                                        <th>Created Time</th>
+                                        <th>Text</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {
+                                        ticketData.length !== 0 &&
+                                        <TicketComponent tickets={ticketData}></TicketComponent>
+                                    }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </>
                     ) : (
                         <form>
                             <h2>Contact Ticket Viewer</h2>
