@@ -19,7 +19,7 @@ import ContactTicketViewerRoute from "./routes/ContactTicketViewer.route";
 import StudentListRoute from "./routes/StudentList.route";
 import CourseRegistrationRoute from "./routes/CourseRegistration.route";
 import MyCoursesRoute from "./routes/MyCourses.route";
-import SendContactTicketRoute from "./routes/SendContactTicket.route";
+import ContactTicketSenderRoute from "./routes/ContactTicketSender.route";
 
 function App() {
 
@@ -49,7 +49,7 @@ function App() {
           <Route path="student-list" element={<StudentListRoute />}/>
           <Route path="course-registration" element={<CourseRegistrationRoute />}/>
           <Route path="my-courses" element={<MyCoursesRoute />}/>
-          <Route path="send-contact-ticket" element={<SendContactTicketRoute />}/>
+          <Route path="contact-ticket-sender" element={<ContactTicketSenderRoute />}/>
           <Route path="*" element={<NotFoundRoute />}/>
         </Routes>
       </Router>

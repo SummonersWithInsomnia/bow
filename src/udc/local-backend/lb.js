@@ -8,6 +8,9 @@ import PostSignupStudent from "./student-handlers/PostSignupStudent";
 import GetDashboard from "./dashboard-handlers/GetDashboard";
 import GetProfile from "./profile-handlers/GetProfile";
 import PatchProfile from "./profile-handlers/PatchProfile";
+import GetUserInfo from "./user-handlers/GetUserInfo";
+import PostSendTicket from "./ticket-handlers/PostSendTicket";
+import GetTickets from "./ticket-handlers/GetTickets";
 
 export class lb {
     constructor() {
@@ -25,6 +28,12 @@ export class lb {
             case "profile":
                 return await GetProfile(token, jsonObj);
 
+            case "user":
+                return await GetUserInfo(token, jsonObj);
+
+            case "tickets":
+                return await GetTickets(token, jsonObj);
+
             default:
                 return await UnreachablePath();
         }
@@ -40,6 +49,9 @@ export class lb {
 
             case "signup-student":
                 return await PostSignupStudent(token, jsonObj);
+
+            case "send-ticket":
+                return await PostSendTicket(token, jsonObj);
 
             default:
                 return await UnreachablePath();
