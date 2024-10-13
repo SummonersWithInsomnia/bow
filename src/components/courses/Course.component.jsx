@@ -4,7 +4,6 @@ const CourseComponent = ({courses}) => (
     <>
         {courses.map((course) => (
             <tr key={course.id}>
-                <td>{course.id}</td>
                 <td>{course.name}</td>
                 <td>{course.code}</td>
                 <td>{course.department}</td>

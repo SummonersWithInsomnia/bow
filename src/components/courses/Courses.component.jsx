@@ -84,7 +84,6 @@ function CoursesComponent() {
                 <table>
                     <thead>
                     <tr>
-                        <th>Course ID</th>
                         <th>Course Name</th>
                         <th>Course Code</th>
                         <th>Department</th>
