@@ -12,6 +12,7 @@ import GetUserInfo from "./user-handlers/GetUserInfo";
 import PostSendTicket from "./ticket-handlers/PostSendTicket";
 import GetTickets from "./ticket-handlers/GetTickets";
 import PostCreateCourse from "./course-handlers/PostCreateCourse";
+import DeleteCourse from "./course-handlers/DeleteCourse";
 
 export class lb {
     constructor() {
@@ -71,6 +72,9 @@ export class lb {
 
     static async delete(path, token, jsonObj) {
         switch (path) {
+            case "course":
+                return await DeleteCourse(token, jsonObj);
+
             default:
                 return await UnreachablePath();
         }

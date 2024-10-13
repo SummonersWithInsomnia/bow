@@ -129,7 +129,56 @@ export class lsh {
 
     static async delete(datasetName, queryObj) {
         if (this.exist(datasetName)) {
+            if (Object.keys(queryObj).length === 0) {
+                return Promise.reject({
+                    "status": 400,
+                    "message": "Bad Request"
+                });
+            } else {
+                let dataset = JSON.parse(localStorage.getItem(datasetName));
+                for (let i = 0; i < dataset.length; i++) {
+                    if (dataset[i].id === queryObj.id) {
+                        dataset[i].deleted = true;
+                        localStorage.setItem(datasetName, JSON.stringify(dataset));
+                        return Promise.resolve({
+                            "status": 200,
+                            "message": "Object Deleted"
+                        });
+                    }
+                }
+                return Promise.reject({
+                    "status": 500,
+                    "message": "Internal Server Error"
+                });
+            }
+        } else {
+            return Promise.reject({
+                "status": 500,
+                "message": "Internal Server Error"
+            });
+        }
+    }
 
+    static async deleteMultiple(datasetName, queryObj) {
+        if (this.exist(datasetName)) {
+            if (Object.keys(queryObj).length === 0) {
+                return Promise.reject({
+                    "status": 400,
+                    "message": "Bad Request"
+                });
+            } else {
+                let dataset = JSON.parse(localStorage.getItem(datasetName));
+                for (let i = 0; i < dataset.length; i++) {
+                    if (dataset[i][queryObj.fk] === queryObj.fkValue) {
+                        dataset[i].deleted = true;
+                    }
+                }
+                localStorage.setItem(datasetName, JSON.stringify(dataset));
+                return Promise.resolve({
+                    "status": 200,
+                    "message": "Objects Deleted"
+                });
+            }
         } else {
             return Promise.reject({
                 "status": 500,

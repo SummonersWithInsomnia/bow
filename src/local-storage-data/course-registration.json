@@ -2,6 +2,7 @@
   {
     "id": 0,
     "student": 0,
-    "course": 0
+    "course": 0,
+    "deleted": false
   }
 ]

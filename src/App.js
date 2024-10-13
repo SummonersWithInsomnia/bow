@@ -19,6 +19,7 @@ import StudentListRoute from "./routes/StudentList.route";
 import MyCoursesRoute from "./routes/MyCourses.route";
 import ContactTicketSenderRoute from "./routes/ContactTicketSender.route";
 import CourseDetailsRoute from "./routes/CourseDetails.route";
+import DeleteCourseRoute from "./routes/DeleteCourse.route";
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
           <Route path="/my-courses" element={<MyCoursesRoute />}/>
           <Route path="/contact-ticket-sender" element={<ContactTicketSenderRoute />}/>
           <Route path="/course-details/:id" element={<CourseDetailsRoute />}/>
+          <Route path="/delete-course/:id" element={<DeleteCourseRoute />}/>
           <Route path="*" element={<NotFoundRoute />}/>
         </Routes>
 
