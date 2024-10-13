@@ -42,7 +42,7 @@ async function PostSendTicket(token, jsonObj) {
                 if (createTicketResult.status === 200) {
                     return Promise.resolve({
                         "status": 200,
-                        "message": "Ticket is Sent"
+                        "message": "Ticket is Sent Successfully"
                     });
                 } else {
                     return Promise.reject({
