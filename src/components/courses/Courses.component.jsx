@@ -35,6 +35,7 @@ function CoursesComponent() {
             "code": e.target.value
         });
     };
+
     const onDepartmentChange = (e) => {
         setSearchQuery({...searchQuery,
             "department": e.target.value
@@ -100,10 +101,10 @@ function CoursesComponent() {
                     </tr>
                     </thead>
                     <tbody>
-                    {courseData.length !== 0 && <CourseComponent courses={courseData}></CourseComponent>}
+                    <CourseComponent courses={courseData}></CourseComponent>
                     </tbody>
                 </table>
-                {courseData.length === 0 && <p>No data</p>}
+                {courseData.length === 0 && <p>No Data</p>}
             </div>
         </>
     );
