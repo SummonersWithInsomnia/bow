@@ -39,7 +39,7 @@ async function GetCourses(token, jsonObj) {
             .catch((data) => { return data; });
 
 
-        if (result.status === 200 && result.data.length > 0) {
+        if (result.status === 200) {
             let optimisedResult = [];
 
             for (let i = 0; i < result.data.length; i++) {

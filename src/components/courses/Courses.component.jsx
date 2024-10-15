@@ -103,6 +103,7 @@ function CoursesComponent() {
                     {courseData.length !== 0 && <CourseComponent courses={courseData}></CourseComponent>}
                     </tbody>
                 </table>
+                {courseData.length === 0 && <p>No data</p>}
             </div>
         </>
     );
