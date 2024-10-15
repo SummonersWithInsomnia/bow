@@ -439,8 +439,7 @@ function EditCourseComponent({ id }) {
                                             </div>
 
                                             <div>
-                                                <Link to={"/course-details/" + courseData.id}>Back to Course
-                                                    Details</Link>
+                                                <Link to={"/course-details/" + courseData.id}>Back to Course Details</Link>
                                             </div>
                                         </form>
                                     </>
