@@ -7,13 +7,13 @@ import PostLoginAdmin from "./admin-handlers/PostLoginAdmin";
 import PostSignupStudent from "./student-handlers/PostSignupStudent";
 import GetDashboard from "./dashboard-handlers/GetDashboard";
 import GetProfile from "./profile-handlers/GetProfile";
-import PatchProfile from "./profile-handlers/PatchProfile";
+import PutProfile from "./profile-handlers/PutProfile";
 import GetUserInfo from "./user-handlers/GetUserInfo";
 import PostSendTicket from "./ticket-handlers/PostSendTicket";
 import GetTickets from "./ticket-handlers/GetTickets";
 import PostCreateCourse from "./course-handlers/PostCreateCourse";
 import DeleteCourse from "./course-handlers/DeleteCourse";
-import PatchCourse from "./course-handlers/PatchCourse";
+import PutCourse from "./course-handlers/PutCourse";
 
 export class lb {
     constructor() {
@@ -66,6 +66,12 @@ export class lb {
 
     static async put(path, token, jsonObj) {
         switch (path) {
+            case "profile":
+                return await PutProfile(token, jsonObj);
+
+            case "course":
+                return await PutCourse(token, jsonObj);
+
             default:
                 return await UnreachablePath();
         }
@@ -83,12 +89,6 @@ export class lb {
 
     static async patch(path, token, jsonObj) {
         switch (path) {
-            case "profile":
-                return await PatchProfile(token, jsonObj);
-
-            case "course":
-                return await PatchCourse(token, jsonObj);
-
             default:
                 return await UnreachablePath();
         }

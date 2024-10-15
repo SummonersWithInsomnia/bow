@@ -41,7 +41,7 @@ function ProfileEditorComponent() {
         setSaveMessage("");
 
         if (firstNameTip === "" && lastNameTip === "" && emailTip === "" && phoneNumberTip === "") {
-            let result = await udc.patch("profile", JSON.parse(localStorage.getItem("user")).token, updateUserProfileData)
+            let result = await udc.put("profile", JSON.parse(localStorage.getItem("user")).token, updateUserProfileData)
                 .then((data) => { return data })
                 .catch((data) => { return data });
 

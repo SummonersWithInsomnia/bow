@@ -209,7 +209,7 @@ function EditCourseComponent({ id }) {
         courseData.availableSeats = courseData.maxSeats - minSeats;
 
         if (nameTip === "" && codeTip === "" && descriptionTip === "" && endDateTip === "" && endTimeTip === "" && maxSeatsTip === "") {
-            let result = await udc.patch("course", JSON.parse(localStorage.getItem("user")).token, courseData)
+            let result = await udc.put("course", JSON.parse(localStorage.getItem("user")).token, courseData)
                 .then((data) => { return data })
                 .catch((data) => { return data });
 

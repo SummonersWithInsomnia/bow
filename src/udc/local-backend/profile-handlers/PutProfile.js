@@ -1,6 +1,6 @@
 import {lsh} from "../lsh/lsh";
 
-async function PatchProfile(token, jsonObj) {
+async function PutProfile(token, jsonObj) {
     let query = JSON.parse(jsonObj);
     let userType = token.match("student") ? "students" : token.match("admin") ? "admins" : "";
 
@@ -65,4 +65,4 @@ async function PatchProfile(token, jsonObj) {
     }
 }
 
-export default PatchProfile
+export default PutProfile

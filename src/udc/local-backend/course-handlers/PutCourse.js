@@ -1,6 +1,6 @@
 import {lsh} from "../lsh/lsh";
 
-async function PatchCourse(token, jsonObj) {
+async function PutCourse(token, jsonObj) {
     let userType = token.match("student") ? "students" : token.match("admin") ? "admins" : "";
     let query = JSON.parse(jsonObj);
 
@@ -72,4 +72,4 @@ async function PatchCourse(token, jsonObj) {
     }
 }
 
-export default PatchCourse;
+export default PutCourse;
