@@ -79,10 +79,6 @@ function EditCourseComponent({ id }) {
         return courseData.maxSeats >= minSeats;
     }
 
-    useEffect(() => {
-        console.log(courseData);
-    }, [courseData]);
-
     function isValidCourseCode(code) {
         const regex = /^([A-Z]+)([0-9]+)$/;
         return regex.test(code);
