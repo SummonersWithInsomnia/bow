@@ -105,7 +105,7 @@ function StudentListByCourseComponent({id}) {
                                                     <StudentComponent students={data["students"]}/>
                                                     </tbody>
                                                 </table>
-                                                {data["students"].length === 0 && <p>No Students</p>}
+                                                {data["students"].length === 0 && <p>No Data</p>}
                                             </div>
                                         </>
                                     }

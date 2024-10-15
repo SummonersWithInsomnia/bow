@@ -1,6 +1,6 @@
 import {lsh} from "../lsh/lsh";
 
-async function GetStudents(token, jsonObj) {
+async function GetStudentList(token, jsonObj) {
     let userType = token.match("student") ? "students" : token.match("admin") ? "admins" : "";
     let query = JSON.parse(jsonObj);
 
@@ -98,4 +98,4 @@ async function GetStudents(token, jsonObj) {
     }
 }
 
-export default GetStudents
+export default GetStudentList

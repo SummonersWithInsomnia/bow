@@ -14,8 +14,8 @@ import GetTickets from "./ticket-handlers/GetTickets";
 import PostCreateCourse from "./course-handlers/PostCreateCourse";
 import DeleteCourse from "./course-handlers/DeleteCourse";
 import PutCourse from "./course-handlers/PutCourse";
-import GetStudents from "./student-handlers/GetStudents";
-import GetStudentListByCourse from "./course-handlers/GetStudentListByCourse";
+import GetStudentList from "./student-handlers/GetStudentList";
+import GetStudentListByCourse from "./student-handlers/GetStudentListByCourse";
 
 export class lb {
     constructor() {
@@ -39,8 +39,8 @@ export class lb {
             case "tickets":
                 return await GetTickets(token, jsonObj);
 
-            case "students":
-                return await GetStudents(token, jsonObj);
+            case "student-list":
+                return await GetStudentList(token, jsonObj);
 
             case "student-list-by-course":
                 return await GetStudentListByCourse(token, jsonObj);
