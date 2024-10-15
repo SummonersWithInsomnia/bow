@@ -16,6 +16,8 @@ import DeleteCourse from "./course-handlers/DeleteCourse";
 import PutCourse from "./course-handlers/PutCourse";
 import GetStudentList from "./student-handlers/GetStudentList";
 import GetStudentListByCourse from "./student-handlers/GetStudentListByCourse";
+import PostRegisterCourse from "./course-registration-handlers/PostRegisterCourse";
+import DeleteDropCourse from "./course-registration-handlers/DeleteDropCourse";
 
 export class lb {
     constructor() {
@@ -67,6 +69,9 @@ export class lb {
             case "create-course":
                 return await PostCreateCourse(token, jsonObj);
 
+            case "register-course":
+                return await PostRegisterCourse(token, jsonObj);
+
             default:
                 return await UnreachablePath();
         }
@@ -89,6 +94,9 @@ export class lb {
         switch (path) {
             case "course":
                 return await DeleteCourse(token, jsonObj);
+
+            case "drop-course":
+                return await DeleteDropCourse(token, jsonObj);
 
             default:
                 return await UnreachablePath();

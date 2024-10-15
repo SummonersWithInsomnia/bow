@@ -22,6 +22,8 @@ import CourseDetailsRoute from "./routes/CourseDetails.route";
 import DeleteCourseRoute from "./routes/DeleteCourse.route";
 import EditCourseRoute from "./routes/EditCourse.route";
 import StudentListByCourseRoute from "./routes/StudentListByCourse.route";
+import RegisterCourseRoute from "./routes/RegisterCourse.route";
+import DropCourseRoute from "./routes/DropCourse.route";
 
 function App() {
 
@@ -48,6 +50,8 @@ function App() {
           <Route path="/contact-ticket-viewer" element={<ContactTicketViewerRoute />}/>
           <Route path="/student-list" element={<StudentListRoute />}/>
           <Route path="/my-courses" element={<MyCoursesRoute />}/>
+          <Route path="/register-course/:id" element={<RegisterCourseRoute />}/>
+          <Route path="/drop-course/:id" element={<DropCourseRoute />}/>
           <Route path="/contact-ticket-sender" element={<ContactTicketSenderRoute />}/>
           <Route path="/course-details/:id" element={<CourseDetailsRoute />}/>
           <Route path="/delete-course/:id" element={<DeleteCourseRoute />}/>
