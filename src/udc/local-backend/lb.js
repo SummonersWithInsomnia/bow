@@ -13,6 +13,7 @@ import PostSendTicket from "./ticket-handlers/PostSendTicket";
 import GetTickets from "./ticket-handlers/GetTickets";
 import PostCreateCourse from "./course-handlers/PostCreateCourse";
 import DeleteCourse from "./course-handlers/DeleteCourse";
+import PatchCourse from "./course-handlers/PatchCourse";
 
 export class lb {
     constructor() {
@@ -84,6 +85,9 @@ export class lb {
         switch (path) {
             case "profile":
                 return await PatchProfile(token, jsonObj);
+
+            case "course":
+                return await PatchCourse(token, jsonObj);
 
             default:
                 return await UnreachablePath();

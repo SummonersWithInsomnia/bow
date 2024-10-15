@@ -20,6 +20,7 @@ import MyCoursesRoute from "./routes/MyCourses.route";
 import ContactTicketSenderRoute from "./routes/ContactTicketSender.route";
 import CourseDetailsRoute from "./routes/CourseDetails.route";
 import DeleteCourseRoute from "./routes/DeleteCourse.route";
+import EditCourseRoute from "./routes/EditCourse.route";
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="/contact-ticket-sender" element={<ContactTicketSenderRoute />}/>
           <Route path="/course-details/:id" element={<CourseDetailsRoute />}/>
           <Route path="/delete-course/:id" element={<DeleteCourseRoute />}/>
+          <Route path="/edit-course/:id" element={<EditCourseRoute />}/>
           <Route path="*" element={<NotFoundRoute />}/>
         </Routes>
 
