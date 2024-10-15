@@ -16,7 +16,9 @@ async function GetUserInfo(token, jsonObj) {
                     type: result.data[0].type,
                     firstName: result.data[0].firstName,
                     lastName: result.data[0].lastName,
-                    email: result.data[0].email
+                    email: result.data[0].email,
+                    department: result.data[0].department,
+                    program: result.data[0].program
                 }
             });
         } else {
@@ -40,7 +42,8 @@ async function GetUserInfo(token, jsonObj) {
                     type: result.data[0].type,
                     firstName: result.data[0].firstName,
                     lastName: result.data[0].lastName,
-                    email: result.data[0].email
+                    email: result.data[0].email,
+                    department: result.data[0].department
                 }
             });
         } else {

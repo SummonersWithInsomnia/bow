@@ -8,7 +8,6 @@ function RegisterCourseComponent({id}) {
 
     useEffect(() => {
         getUserInfo();
-        getResult();
     }, []);
 
     const getUserInfo = async () => {
@@ -28,7 +27,8 @@ function RegisterCourseComponent({id}) {
         }
     }
 
-    const getResult = async () => {
+    const getResult = async (e) => {
+        e.preventDefault();
         setMessage("Registering...");
 
         let result = await udc.post("register-course", JSON.parse(localStorage.getItem("user")).token, { id: Number(id) })
@@ -39,7 +39,7 @@ function RegisterCourseComponent({id}) {
         setMessage(result.message);
         setTimeout(() => {
             window.location.href = MY_COURSES_INDEX
-        }, 5000);
+        }, 3000);
     }
 
     return (
@@ -49,9 +49,10 @@ function RegisterCourseComponent({id}) {
                     <>
                         {
                             userInfo.type === "student" ? (
-                                <form>
-                                    <h2>Register Course</h2>
+                                <form onSubmit={getResult}>
+                                    <h2>Register Course?</h2>
                                     <p>{message}</p>
+                                    <button type="submit">Confirm</button>
                                 </form>
                             ) : (
                                 <form>
