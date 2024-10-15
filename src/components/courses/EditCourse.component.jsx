@@ -257,7 +257,7 @@ function EditCourseComponent({ id }) {
                                                     placeholder="Course Name"
                                                     required
                                                     onChange={handleCourseFormChange}
-                                                    value={courseData.name}
+                                                    defaultValue={courseData.name}
                                                 />
                                                 {nameTip && <p>{nameTip}</p>}
                                             </div>
@@ -269,7 +269,7 @@ function EditCourseComponent({ id }) {
                                                     placeholder="Course Code"
                                                     required
                                                     onChange={handleCourseFormChange}
-                                                    value={courseData.code}
+                                                    defaultValue={courseData.code}
                                                 />
                                                 {codeTip && <p>{codeTip}</p>}
                                             </div>
@@ -279,7 +279,7 @@ function EditCourseComponent({ id }) {
                                                 <select
                                                     name="tbDepartment"
                                                     required
-                                                    value={courseData.department}
+                                                    defaultValue={courseData.department}
                                                     onChange={handleCourseFormChange}
                                                 >
                                                     <option value="Software Development">Software Development</option>
@@ -292,7 +292,7 @@ function EditCourseComponent({ id }) {
                                                     name="tbProgram"
                                                     required
                                                     onChange={handleCourseFormChange}
-                                                    value={courseData.program}
+                                                    defaultValue={courseData.program}
                                                 >
                                                     <option value="Certificate (6 months)">Certificate (6 months)
                                                     </option>
@@ -307,7 +307,7 @@ function EditCourseComponent({ id }) {
                                                     name="tbTerm"
                                                     required
                                                     onChange={handleCourseFormChange}
-                                                    value={courseData.term}
+                                                    defaultValue={courseData.term}
                                                 >
                                                     <option value="Fall">Fall</option>
                                                     <option value="Winter">Winter</option>
@@ -323,7 +323,7 @@ function EditCourseComponent({ id }) {
                                                     name="tbStartDate"
                                                     required
                                                     onChange={handleCourseFormChange}
-                                                    value={courseData.startDate}
+                                                    defaultValue={courseData.startDate}
                                                 />
                                             </div>
 
@@ -334,7 +334,7 @@ function EditCourseComponent({ id }) {
                                                     name="tbEndDate"
                                                     required
                                                     onChange={handleCourseFormChange}
-                                                    value={courseData.endDate}
+                                                    defaultValue={courseData.endDate}
                                                 />
                                                 {endDateTip && <p>{endDateTip}</p>}
                                             </div>
@@ -344,7 +344,7 @@ function EditCourseComponent({ id }) {
                                                 <select
                                                     name="tbWeekDay"
                                                     required
-                                                    value={courseData.weekDay}
+                                                    defaultValue={courseData.weekDay}
                                                     onChange={handleCourseFormChange}
                                                 >
                                                     <option value="Monday">Monday</option>
@@ -363,7 +363,7 @@ function EditCourseComponent({ id }) {
                                                     type="time"
                                                     name="tbStartTime"
                                                     required
-                                                    value={courseData.startTime}
+                                                    defaultValue={courseData.startTime}
                                                     onChange={handleCourseFormChange}
                                                 />
                                             </div>
@@ -374,7 +374,7 @@ function EditCourseComponent({ id }) {
                                                     type="time"
                                                     name="tbEndTime"
                                                     required
-                                                    value={courseData.endTime}
+                                                    defaultValue={courseData.endTime}
                                                     onChange={handleCourseFormChange}
                                                 />
                                                 {endTimeTip && <p>{endTimeTip}</p>}
@@ -385,7 +385,7 @@ function EditCourseComponent({ id }) {
                                                 <select
                                                     name="tbCampus"
                                                     required
-                                                    value={courseData.campus}
+                                                    defaultValue={courseData.campus}
                                                     onChange={handleCourseFormChange}
                                                 >
                                                     <option value="Calgary - Main Campus">Calgary - Main Campus</option>
@@ -397,7 +397,7 @@ function EditCourseComponent({ id }) {
                                                 <select
                                                     name="tbDeliveryMethod"
                                                     required
-                                                    value={courseData.deliveryMethod}
+                                                    defaultValue={courseData.deliveryMethod}
                                                     onChange={handleCourseFormChange}
                                                 >
                                                     <option value="Real-time In-person">Real-time In-person</option>
@@ -411,7 +411,7 @@ function EditCourseComponent({ id }) {
                                                 <input
                                                     type="number"
                                                     name="tbMaxSeats"
-                                                    value={courseData.maxSeats}
+                                                    defaultValue={courseData.maxSeats}
                                                     min={0}
                                                     required
                                                     onChange={handleCourseFormChange}
@@ -424,7 +424,7 @@ function EditCourseComponent({ id }) {
                                                      name="tbDescription"
                                                      placeholder="Description"
                                                      required
-                                                     value={courseData.description}
+                                                     defaultValue={courseData.description}
                                                      onChange={handleCourseFormChange}
                                                  />
                                                 {descriptionTip && <p>{descriptionTip}</p>}

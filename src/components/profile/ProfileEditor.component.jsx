@@ -152,7 +152,7 @@ function ProfileEditorComponent() {
                                 name="tbFirstName"
                                 placeholder="First Name"
                                 required
-                                value={userProfile.firstName}
+                                defaultValue={userProfile.firstName}
                                 onChange={handleFormChange}
                             />
                             {firstNameTip && <p>{firstNameTip}</p>}
@@ -164,7 +164,7 @@ function ProfileEditorComponent() {
                                 name="tbLastName"
                                 placeholder="Last Name"
                                 required
-                                value={userProfile.lastName}
+                                defaultValue={userProfile.lastName}
                                 onChange={handleFormChange}
                             />
                             {lastNameTip && <p>{lastNameTip}</p>}
@@ -176,7 +176,7 @@ function ProfileEditorComponent() {
                                 name="tbEmail"
                                 placeholder="Email"
                                 required
-                                value={userProfile.email}
+                                defaultValue={userProfile.email}
                                 onChange={handleFormChange}
                             />
                             {emailTip && <p>{emailTip}</p>}
@@ -187,7 +187,7 @@ function ProfileEditorComponent() {
                                 name="tbPhoneCountryCode"
                                 required
                                 onChange={handleFormChange}
-                                value={1}
+                                defaultValue={1}
                             >
                                 <option value={1}>Canada (+1)</option>
                                 <option value={1}>United States (+1)</option>
@@ -200,7 +200,7 @@ function ProfileEditorComponent() {
                                 name="tbPhoneNumber"
                                 placeholder="Phone Number"
                                 required
-                                value={userProfile.phoneNumber}
+                                defaultValue={userProfile.phoneNumber}
                                 onChange={handleFormChange}
                             />
                             {phoneNumberTip && <p>{phoneNumberTip}</p>}
@@ -212,7 +212,7 @@ function ProfileEditorComponent() {
                                 name="tbBirthday"
                                 required
                                 onChange={handleFormChange}
-                                value={userProfile.birthday}
+                                defaultValue={userProfile.birthday}
                             />
                         </div>
 
