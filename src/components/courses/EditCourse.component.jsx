@@ -294,7 +294,8 @@ function EditCourseComponent({ id }) {
                                                     onChange={handleCourseFormChange}
                                                     value={courseData.program}
                                                 >
-                                                    <option value="Certificate (6 months)">Certificate (6 months)</option>
+                                                    <option value="Certificate (6 months)">Certificate (6 months)
+                                                    </option>
                                                     <option value="Post-Diploma (1 year)">Post-Diploma (1 year)</option>
                                                     <option value="Diploma (2 years)">Diploma (2 years)</option>
                                                 </select>
@@ -436,19 +437,19 @@ function EditCourseComponent({ id }) {
                                             <div>
                                                 <button type="submit" name="btnSubmit">Edit Course</button>
                                             </div>
-                                        </form>
 
-                                        <div>
-                                            <div><Link to={"/course-details/" + courseData.id}>Back to Course Details</Link>
+                                            <div>
+                                                <Link to={"/course-details/" + courseData.id}>Back to Course
+                                                    Details</Link>
                                             </div>
-                                        </div>
+                                        </form>
                                     </>
                                 )
                             }
                         </>
                     ) : (
                         <form>
-                            <h2>Edit Course</h2>
+                        <h2>Edit Course</h2>
                             <p>This function is only available for admins.</p>
                         </form>
                     )}
