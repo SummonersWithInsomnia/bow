@@ -5,7 +5,7 @@ function ProfileRoute() {
     document.title = "Profile - " + APP_NAME;
     return (
         <main>
-            <ProfileComponent />
+            <ProfileComponent/>
         </main>
     );
 }

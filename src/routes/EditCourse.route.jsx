@@ -3,7 +3,7 @@ import {APP_NAME} from "../App.config";
 import EditCourseComponent from "../components/courses/EditCourse.component";
 
 function EditCourseRoute() {
-    const { id } = useParams();
+    const {id} = useParams();
     document.title = "Edit Course - " + APP_NAME;
 
     return (

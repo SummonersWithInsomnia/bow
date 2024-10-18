@@ -17,8 +17,10 @@ async function PostSendTicket(token, jsonObj) {
                 "message": "Bad Request"
             });
         } else {
-            let result = await lsh.read("students", { id: uid })
-                .then((data) => { return data; });
+            let result = await lsh.read("students", {id: uid})
+                .then((data) => {
+                    return data;
+                });
             if (result.status === 200 && result.data.length === 1 && result.data[0].id === uid) {
                 let hourString = new Date().toISOString().substring(11, 13);
                 let hour = Number(hourString);
@@ -57,8 +59,7 @@ async function PostSendTicket(token, jsonObj) {
                 });
             }
         }
-    }
-    else {
+    } else {
         return Promise.reject({
             "status": 400,
             "message": "Bad Request"

@@ -7,8 +7,12 @@ async function GetStudentList(token, jsonObj) {
     if (userType === "admins") {
         if (Object.keys(query).length === 0) {
             let studentDataResult = await lsh.read("students", {})
-                .then((data) => {return data})
-                .catch((data) => {return data});
+                .then((data) => {
+                    return data
+                })
+                .catch((data) => {
+                    return data
+                });
 
             if (studentDataResult.status === 200) {
                 let studentData = studentDataResult.data;
@@ -57,8 +61,12 @@ async function GetStudentList(token, jsonObj) {
             }
 
             let result = await lsh.read("students", safeAccurateQueryItems)
-                .then((data) => { return data })
-                .catch((data) => { return data });
+                .then((data) => {
+                    return data
+                })
+                .catch((data) => {
+                    return data
+                });
 
             if (result.status === 200) {
                 let optimisedResult = [];

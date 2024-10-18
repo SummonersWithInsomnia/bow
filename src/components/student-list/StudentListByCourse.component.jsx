@@ -17,8 +17,12 @@ function StudentListByCourseComponent({id}) {
     const getUserInfo = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("user", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserInfo(result.userdata);
@@ -32,9 +36,13 @@ function StudentListByCourseComponent({id}) {
     }
 
     const getData = async () => {
-        let result = await udc.get("student-list-by-course", JSON.parse(localStorage.getItem("user")).token, { id: Number(id) })
-            .then((data) => { return data; })
-            .catch((data) => { return data; });
+        let result = await udc.get("student-list-by-course", JSON.parse(localStorage.getItem("user")).token, {id: Number(id)})
+            .then((data) => {
+                return data;
+            })
+            .catch((data) => {
+                return data;
+            });
 
         try {
             if (result.status === 200) {
@@ -43,7 +51,8 @@ function StudentListByCourseComponent({id}) {
             } else {
                 setCourseError("The course is not exist.")
             }
-        } catch (error) {}
+        } catch (error) {
+        }
     }
 
     return (

@@ -13,22 +13,32 @@ async function GetStudentListByCourse(token, jsonObj) {
 
     if (userType === "admins") {
         let courseResult = await lsh.read("courses", {id: Number(query.id), deleted: false})
-            .then((data) => { return data })
-            .catch((data) => { return data });
+            .then((data) => {
+                return data
+            })
+            .catch((data) => {
+                return data
+            });
 
         if (courseResult.status === 200 && courseResult.data[0].id === Number(query.id)) {
             let registrationResult = await lsh.read("course-registration", {
                 deleted: false,
                 course: Number(query.id)
-            }).then(data => { return data; })
-                .catch((data) => { return data });
+            }).then(data => {
+                return data;
+            })
+                .catch((data) => {
+                    return data
+                });
 
             if (registrationResult.status === 200) {
                 let studentData = [];
 
                 for (let i = 0; i < registrationResult.data.length; i++) {
-                    studentData.push(await lsh.read("students", { id: registrationResult.data[i].student })
-                        .then((result) => { return result.data[0] }));
+                    studentData.push(await lsh.read("students", {id: registrationResult.data[i].student})
+                        .then((result) => {
+                            return result.data[0]
+                        }));
                 }
 
                 return Promise.resolve({

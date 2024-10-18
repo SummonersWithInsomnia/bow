@@ -19,8 +19,12 @@ function TicketSenderComponent() {
     const getUserInfo = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("user", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserInfo(result.userdata);
@@ -47,12 +51,18 @@ function TicketSenderComponent() {
 
 
         let result = await udc.post("send-ticket", JSON.parse(localStorage.getItem("user")).token, ticketData)
-            .then((data) => { return data })
-            .catch((data) => { return data });
+            .then((data) => {
+                return data
+            })
+            .catch((data) => {
+                return data
+            });
 
         if (result.status === 200) {
             setTicketMessage(result.message);
-            setTimeout(() => {window.location.href = USER_LOGGED_IN_ENTRANCE}, 3000);
+            setTimeout(() => {
+                window.location.href = USER_LOGGED_IN_ENTRANCE
+            }, 3000);
         } else {
             setSending(false);
             setTicketMessage(result.message);
@@ -72,7 +82,7 @@ function TicketSenderComponent() {
                             <form onSubmit={handleSendTicket}>
                                 <h2>Send Contact Ticket</h2>
                                 {!sending &&
-                                <div>
+                                    <div>
                                     <textarea
                                         placeholder={"Please leave your message..."}
                                         minLength={20}
@@ -81,16 +91,16 @@ function TicketSenderComponent() {
                                         required
                                         name="tbText"
                                     />
-                                </div>
+                                    </div>
                                 }
 
                                 <div>
                                     <p>{ticketMessage}</p>
                                 </div>
                                 {!sending &&
-                                <div>
-                                    <button type="submit" name="btnSend">Send</button>
-                                </div>
+                                    <div>
+                                        <button type="submit" name="btnSend">Send</button>
+                                    </div>
                                 }
 
                             </form>

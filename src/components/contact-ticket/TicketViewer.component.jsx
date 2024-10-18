@@ -15,8 +15,12 @@ function TicketViewerComponent() {
     const getUserInfo = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("user", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserInfo(result.userdata);
@@ -32,8 +36,12 @@ function TicketViewerComponent() {
     const getTicketData = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("tickets", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setTicketData(result.data);

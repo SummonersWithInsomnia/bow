@@ -1,5 +1,5 @@
-function DropdownFilterComponent( { friendlyName, options, onChangeHandler } ) {
-    return(
+function DropdownFilterComponent({friendlyName, options, onChangeHandler}) {
+    return (
         <div className="dropdownFilter">
             <select className="dropdownSelect" onChange={onChangeHandler}>
                 <option value="">{friendlyName}</option>

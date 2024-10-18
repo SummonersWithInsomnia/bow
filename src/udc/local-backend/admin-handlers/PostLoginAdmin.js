@@ -1,4 +1,4 @@
-const { lsh } = require("../lsh/lsh");
+const {lsh} = require("../lsh/lsh");
 
 async function PostLoginAdmin(token, jsonObj) {
     let query = JSON.parse(jsonObj);

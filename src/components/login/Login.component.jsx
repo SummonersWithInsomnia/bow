@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { udc } from "../../udc/udc";
-import { USER_LOGGED_IN_ENTRANCE } from "../../App.config";
+import {useState} from "react";
+import {udc} from "../../udc/udc";
+import {USER_LOGGED_IN_ENTRANCE} from "../../App.config";
 import {Link} from "react-router-dom";
 
 function LoginComponent() {
@@ -32,11 +32,15 @@ function LoginComponent() {
                 "username": username,
                 "password": password
             })
-            .then((data) => { return data })
-            .catch((data) => { return data});
+            .then((data) => {
+                return data
+            })
+            .catch((data) => {
+                return data
+            });
 
         if (result.status === 200) {
-            const loggedInUser = { type: result.userdata.type, token: result.userdata.token };
+            const loggedInUser = {type: result.userdata.type, token: result.userdata.token};
             localStorage.setItem("user", JSON.stringify(loggedInUser));
             window.location.href = USER_LOGGED_IN_ENTRANCE;
         } else {
@@ -81,15 +85,16 @@ function LoginComponent() {
                     </div>
                 </form>
                 {
-                        studentVersion &&
-                        <div>
-                            <p>Not registered yet? <Link to="/signup">Sign up</Link> now!</p>
-                        </div>
+                    studentVersion &&
+                    <div>
+                        <p>Not registered yet? <Link to="/signup">Sign up</Link> now!</p>
+                    </div>
                 }
 
                 <div>
                     <a onClick={switchVersion}>
-                        <i className="fa-solid fa-repeat"></i> Switch to {studentVersion ? "Administrator" : "Student"} Version
+                        <i className="fa-solid fa-repeat"></i> Switch
+                        to {studentVersion ? "Administrator" : "Student"} Version
                     </a>
                 </div>
             </div>

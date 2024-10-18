@@ -21,8 +21,12 @@ function ProfileEditorComponent() {
     const getUserProfile = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("profile", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserProfile(result.userdata);
@@ -42,8 +46,12 @@ function ProfileEditorComponent() {
 
         if (firstNameTip === "" && lastNameTip === "" && emailTip === "" && phoneNumberTip === "") {
             let result = await udc.put("profile", JSON.parse(localStorage.getItem("user")).token, updateUserProfileData)
-                .then((data) => { return data })
-                .catch((data) => { return data });
+                .then((data) => {
+                    return data
+                })
+                .catch((data) => {
+                    return data
+                });
 
             if (result.status === 200) {
                 setSaveMessage(result.message);
@@ -67,7 +75,8 @@ function ProfileEditorComponent() {
                 } else {
                     setFirstNameTip("");
                 }
-                setUpdateUserProfileData({...updateUserProfileData,
+                setUpdateUserProfileData({
+                    ...updateUserProfileData,
                     ["firstName"]: e.target.value
                 });
                 break;
@@ -78,7 +87,8 @@ function ProfileEditorComponent() {
                 } else {
                     setLastNameTip("");
                 }
-                setUpdateUserProfileData({...updateUserProfileData,
+                setUpdateUserProfileData({
+                    ...updateUserProfileData,
                     ["lastName"]: e.target.value
                 });
                 break;
@@ -89,13 +99,15 @@ function ProfileEditorComponent() {
                 } else {
                     setEmailTip("");
                 }
-                setUpdateUserProfileData({...updateUserProfileData,
+                setUpdateUserProfileData({
+                    ...updateUserProfileData,
                     ["email"]: e.target.value
                 });
                 break;
 
             case "tbPhoneCountryCode":
-                setUpdateUserProfileData({...updateUserProfileData,
+                setUpdateUserProfileData({
+                    ...updateUserProfileData,
                     ["phoneCountryCode"]: Number(e.target.value)
                 });
                 break;
@@ -106,13 +118,15 @@ function ProfileEditorComponent() {
                 } else {
                     setPhoneNumberTip("");
                 }
-                setUpdateUserProfileData({...updateUserProfileData,
+                setUpdateUserProfileData({
+                    ...updateUserProfileData,
                     ["phoneNumber"]: Number(e.target.value)
                 });
                 break;
 
             case "tbBirthday":
-                setUpdateUserProfileData({...updateUserProfileData,
+                setUpdateUserProfileData({
+                    ...updateUserProfileData,
                     ["birthday"]: e.target.value
                 });
                 break;
@@ -225,7 +239,7 @@ function ProfileEditorComponent() {
                         </div>
 
                         <div>
-                            <br />
+                            <br/>
                             <Link to="/profile">Back to My Profile</Link>
                         </div>
                     </form>

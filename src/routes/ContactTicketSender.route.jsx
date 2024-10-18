@@ -6,7 +6,7 @@ function ContactTicketSenderRoute() {
 
     return (
         <main>
-            <TicketSenderComponent />
+            <TicketSenderComponent/>
         </main>
     );
 }

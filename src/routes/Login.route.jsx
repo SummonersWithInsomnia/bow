@@ -10,7 +10,7 @@ function LoginRoute() {
 
     return (
         <main>
-            <LoginComponent />
+            <LoginComponent/>
         </main>
     );
 }

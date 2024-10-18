@@ -4,7 +4,7 @@ import StudentListByCourseComponent from "../components/student-list/StudentList
 
 function StudentListByCourseRoute() {
     document.title = "Student List by Course - " + APP_NAME;
-    const { id } = useParams();
+    const {id} = useParams();
 
     return (
         <main>

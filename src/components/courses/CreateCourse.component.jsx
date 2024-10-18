@@ -49,8 +49,12 @@ function CreateCourseComponent() {
     const getUserInfo = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("user", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserInfo(result.userdata);
@@ -88,7 +92,8 @@ function CreateCourseComponent() {
                 } else {
                     setNameTip("");
                 }
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["name"]: e.target.value
                 });
                 break;
@@ -99,49 +104,57 @@ function CreateCourseComponent() {
                 } else {
                     setCodeTip("");
                 }
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["code"]: e.target.value
                 });
                 break;
 
             case "tbDepartment":
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["department"]: e.target.value
                 });
                 break;
 
             case "tbProgram":
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["program"]: e.target.value
                 });
                 break;
 
             case "tbTerm":
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["term"]: e.target.value
                 });
                 break;
 
             case "tbWeekDay":
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["weekDay"]: e.target.value
                 });
                 break;
 
             case "tbCampus":
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["campus"]: e.target.value
                 });
                 break;
 
             case "tbDeliveryMethod":
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["deliveryMethod"]: e.target.value
                 });
                 break;
 
             case "tbMaxSeats":
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["maxSeats"]: e.target.value
                 });
                 break;
@@ -152,31 +165,36 @@ function CreateCourseComponent() {
                 } else {
                     setDescriptionTip("");
                 }
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["description"]: e.target.value
                 });
                 break;
 
             case "tbStartDate":
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["startDate"]: e.target.value
                 });
                 break;
 
             case "tbEndDate":
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["endDate"]: e.target.value
                 });
                 break;
 
             case "tbStartTime":
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["startTime"]: e.target.value
                 });
                 break;
 
             case "tbEndTime":
-                setNewCourseData({...newCourseData,
+                setNewCourseData({
+                    ...newCourseData,
                     ["endTime"]: e.target.value
                 });
                 break;
@@ -192,8 +210,12 @@ function CreateCourseComponent() {
 
         if (nameTip === "" && codeTip === "" && descriptionTip === "" && endDateTip === "" && endTimeTip === "") {
             let result = await udc.post("create-course", JSON.parse(localStorage.getItem("user")).token, newCourseData)
-                .then((data) => { return data })
-                .catch((data) => { return data });
+                .then((data) => {
+                    return data
+                })
+                .catch((data) => {
+                    return data
+                });
 
             if (result.status === 200) {
                 setCreateCourseMessage(result.message);

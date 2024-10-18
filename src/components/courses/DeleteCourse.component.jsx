@@ -3,7 +3,7 @@ import {udc} from "../../udc/udc";
 import {GUEST_ENTRANCE, USER_LOGGED_IN_ENTRANCE} from "../../App.config";
 import {Link} from "react-router-dom";
 
-function DeleteCourseComponent({ id }) {
+function DeleteCourseComponent({id}) {
     const [userInfo, setUserInfo] = useState({});
     const [courseData, setCourseData] = useState({});
     const [courseError, setCourseError] = useState("");
@@ -17,8 +17,12 @@ function DeleteCourseComponent({ id }) {
     const getUserInfo = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("user", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserInfo(result.userdata);
@@ -33,8 +37,12 @@ function DeleteCourseComponent({ id }) {
 
     const getCourseData = async () => {
         let result = await udc.get("courses", "", {id: Number(id)})
-            .then((data) => { return data })
-            .catch((data) => { return data });
+            .then((data) => {
+                return data
+            })
+            .catch((data) => {
+                return data
+            });
 
         if (result.status === 200) {
             setCourseData(result.data[0]);
@@ -46,15 +54,23 @@ function DeleteCourseComponent({ id }) {
     const deleteCourseHandler = async (e) => {
         e.preventDefault();
         let result = await udc.delete("course", JSON.parse(localStorage.getItem("user")).token, {id: Number(id)})
-            .then((data) => { return data })
-            .catch((data) => { return data; });
+            .then((data) => {
+                return data
+            })
+            .catch((data) => {
+                return data;
+            });
 
         if (result.status === 200) {
             setDeleteCourseMessage(result.message);
-            setTimeout(() => {window.location.href = USER_LOGGED_IN_ENTRANCE}, 3000);
+            setTimeout(() => {
+                window.location.href = USER_LOGGED_IN_ENTRANCE
+            }, 3000);
         } else {
             setDeleteCourseMessage(result.message);
-            setTimeout(() => {setDeleteCourseMessage("")}, 3000);
+            setTimeout(() => {
+                setDeleteCourseMessage("")
+            }, 3000);
         }
     };
 
@@ -103,8 +119,11 @@ function DeleteCourseComponent({ id }) {
                                         </div>
 
                                         <div>
-                                            <div><button onClick={deleteCourseHandler}>Delete</button></div>
-                                            <div><Link to={"/course-details/" + courseData.id}>Back to Course Details</Link></div>
+                                            <div>
+                                                <button onClick={deleteCourseHandler}>Delete</button>
+                                            </div>
+                                            <div><Link to={"/course-details/" + courseData.id}>Back to Course Details</Link>
+                                            </div>
                                         </div>
                                     </>
                                 )

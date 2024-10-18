@@ -13,14 +13,22 @@ async function PostRegisterCourse(token, jsonObj) {
 
     if (userType === "students") {
         let uid = parseInt(token.substring(7));
-        let studentResult = await lsh.read("students", { id: uid } )
-            .then((data) => { return data; })
-            .catch((data) => { return data; });
+        let studentResult = await lsh.read("students", {id: uid})
+            .then((data) => {
+                return data;
+            })
+            .catch((data) => {
+                return data;
+            });
 
         if (studentResult.status === 200 && studentResult.data.length === 1 && studentResult.data[0].id === uid) {
-            let courseResult = await lsh.read("courses", { id: query.id, deleted: false })
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+            let courseResult = await lsh.read("courses", {id: query.id, deleted: false})
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (courseResult.status === 200 && courseResult.data.length === 1 && courseResult.data[0].id === query.id) {
                 if (studentResult.data[0].department !== courseResult.data[0].department) {
@@ -37,14 +45,29 @@ async function PostRegisterCourse(token, jsonObj) {
                 }
 
                 if (courseResult.data[0].availableSeats > 0) {
-                    let registrationResult = await lsh.read("course-registration", { course: courseResult.data[0].id, student: studentResult.data[0].id, deleted: false })
-                        .then((data) => { return data; })
-                        .catch((data) => { return data; });
+                    let registrationResult = await lsh.read("course-registration", {
+                        course: courseResult.data[0].id,
+                        student: studentResult.data[0].id,
+                        deleted: false
+                    })
+                        .then((data) => {
+                            return data;
+                        })
+                        .catch((data) => {
+                            return data;
+                        });
 
                     if (registrationResult.status === 200 && registrationResult.data.length === 0) {
-                        let studentMaxCourses = await lsh.read("course-registration", { student: studentResult.data[0].id, deleted: false })
-                            .then((data) => { return data; })
-                            .catch((data) => { return data; });
+                        let studentMaxCourses = await lsh.read("course-registration", {
+                            student: studentResult.data[0].id,
+                            deleted: false
+                        })
+                            .then((data) => {
+                                return data;
+                            })
+                            .catch((data) => {
+                                return data;
+                            });
 
                         if (studentMaxCourses.status === 200) {
                             let maxCourses = 0;
@@ -63,31 +86,39 @@ async function PostRegisterCourse(token, jsonObj) {
                             }
 
                             if (studentMaxCourses.data.length < maxCourses) {
-                                    let registerResult = await lsh.create("course-registration", {
-                                        student: studentResult.data[0].id,
-                                        course: courseResult.data[0].id,
-                                        deleted: false
-                                    }).then(data => { return data; }).catch((data) => { return data; });
+                                let registerResult = await lsh.create("course-registration", {
+                                    student: studentResult.data[0].id,
+                                    course: courseResult.data[0].id,
+                                    deleted: false
+                                }).then(data => {
+                                    return data;
+                                }).catch((data) => {
+                                    return data;
+                                });
 
-                                    courseResult.data[0].availableSeats -= 1;
+                                courseResult.data[0].availableSeats -= 1;
 
-                                    let updateCourseResult = await lsh.update("courses", courseResult.data[0])
-                                        .then((data) => { return data; })
-                                        .catch((data) => { return data; });
+                                let updateCourseResult = await lsh.update("courses", courseResult.data[0])
+                                    .then((data) => {
+                                        return data;
+                                    })
+                                    .catch((data) => {
+                                        return data;
+                                    });
 
-                                    if (registerResult.status === 200 && updateCourseResult.status === 200) {
-                                        return Promise.resolve({
-                                            "status": 200,
-                                            "message": "Course Registered Successfully"
-                                        });
+                                if (registerResult.status === 200 && updateCourseResult.status === 200) {
+                                    return Promise.resolve({
+                                        "status": 200,
+                                        "message": "Course Registered Successfully"
+                                    });
 
-                                    } else {
-                                        // Cleanup when it doesn't work
-                                        return Promise.reject({
-                                            "status": 400,
-                                            "message": "Bad Request"
-                                        });
-                                    }
+                                } else {
+                                    // Cleanup when it doesn't work
+                                    return Promise.reject({
+                                        "status": 400,
+                                        "message": "Bad Request"
+                                    });
+                                }
 
                             } else {
                                 return Promise.reject({

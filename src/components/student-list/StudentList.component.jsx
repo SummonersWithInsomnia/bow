@@ -24,8 +24,12 @@ function StudentListComponent() {
     const getUserInfo = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("user", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserInfo(result.userdata);
@@ -44,43 +48,53 @@ function StudentListComponent() {
 
     const getSearchStudentData = async (searchQuery) => {
         let result = await udc.get("student-list", JSON.parse(localStorage.getItem("user")).token, searchQuery)
-            .then((data) => { return data; })
-            .catch((data) => { return data; });
+            .then((data) => {
+                return data;
+            })
+            .catch((data) => {
+                return data;
+            });
 
         try {
             if (result.status === 200) {
                 setStudentData(result.data);
             }
-        } catch (error) {}
+        } catch (error) {
+        }
 
     };
 
     const onDepartmentChange = (e) => {
-        setSearchQuery({...searchQuery,
+        setSearchQuery({
+            ...searchQuery,
             "department": e.target.value
         });
     };
 
     const onProgramChange = (e) => {
-        setSearchQuery({...searchQuery,
+        setSearchQuery({
+            ...searchQuery,
             "program": e.target.value
         });
     };
 
     const onFirstNameChange = (e) => {
-        setSearchQuery({...searchQuery,
+        setSearchQuery({
+            ...searchQuery,
             "firstName": e.target.value
         });
     };
 
     const onLastNameChange = (e) => {
-        setSearchQuery({...searchQuery,
+        setSearchQuery({
+            ...searchQuery,
             "lastName": e.target.value
         });
     };
 
     const onEmailChange = (e) => {
-        setSearchQuery({...searchQuery,
+        setSearchQuery({
+            ...searchQuery,
             "email": e.target.value
         });
     };
@@ -96,11 +110,14 @@ function StudentListComponent() {
                             </div>
 
                             <div>
-                                <SearchBoxComponent placeholder={"First Name"} onChangeHandler={onFirstNameChange} />
-                                <SearchBoxComponent placeholder={"Last Name"} onChangeHandler={onLastNameChange} />
-                                <SearchBoxComponent placeholder={"Email"} onChangeHandler={onEmailChange} />
-                                <DropdownFilterComponent friendlyName="Department" options={["Software Development"]} onChangeHandler={onDepartmentChange} />
-                                <DropdownFilterComponent friendlyName="Program" options={["Certificate (6 months)", "Post-Diploma (1 year)", "Diploma (2 years)"]} onChangeHandler={onProgramChange} />
+                                <SearchBoxComponent placeholder={"First Name"} onChangeHandler={onFirstNameChange}/>
+                                <SearchBoxComponent placeholder={"Last Name"} onChangeHandler={onLastNameChange}/>
+                                <SearchBoxComponent placeholder={"Email"} onChangeHandler={onEmailChange}/>
+                                <DropdownFilterComponent friendlyName="Department" options={["Software Development"]}
+                                                         onChangeHandler={onDepartmentChange}/>
+                                <DropdownFilterComponent friendlyName="Program"
+                                                         options={["Certificate (6 months)", "Post-Diploma (1 year)", "Diploma (2 years)"]}
+                                                         onChangeHandler={onProgramChange}/>
                             </div>
 
                             <div>
@@ -118,7 +135,7 @@ function StudentListComponent() {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <StudentComponent students={studentData} />
+                                    <StudentComponent students={studentData}/>
                                     </tbody>
                                 </table>
                                 {studentData.length === 0 && <p>No Data</p>}

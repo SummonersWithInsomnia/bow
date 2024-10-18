@@ -1,7 +1,7 @@
 // Unified Data Connection
 
-import { UDC_SOURCE } from "./udc.config";
-import { lb } from "./local-backend/lb";
+import {UDC_SOURCE} from "./udc.config";
+import {lb} from "./local-backend/lb";
 
 export class udc {
     constructor() {

@@ -1,4 +1,4 @@
-import { lsh } from "../lsh/lsh";
+import {lsh} from "../lsh/lsh";
 
 async function PostSignupStudent(token, jsonObj) {
     let query = JSON.parse(jsonObj);
@@ -14,8 +14,10 @@ async function PostSignupStudent(token, jsonObj) {
         query.hasOwnProperty("department") &&
         query.hasOwnProperty("program")
     ) {
-        let existUser = await lsh.read("students", { "username": query.username.toLowerCase()})
-            .then((data) => { return data });
+        let existUser = await lsh.read("students", {"username": query.username.toLowerCase()})
+            .then((data) => {
+                return data
+            });
 
         if (existUser.data.length === 0) {
             let newUser = {
@@ -33,7 +35,9 @@ async function PostSignupStudent(token, jsonObj) {
             }
 
             let result = await lsh.create("students", newUser)
-                .then((data) => { return data });
+                .then((data) => {
+                    return data
+                });
 
             if (result.status === 200) {
                 return Promise.resolve({

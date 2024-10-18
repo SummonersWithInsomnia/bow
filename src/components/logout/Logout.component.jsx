@@ -4,7 +4,9 @@ import {GUEST_ENTRANCE} from "../../App.config";
 function LogoutComponent() {
     useEffect(() => {
         localStorage.removeItem("user");
-        setTimeout(() => {window.location.href = GUEST_ENTRANCE}, 3000);
+        setTimeout(() => {
+            window.location.href = GUEST_ENTRANCE
+        }, 3000);
     }, []);
 
     return (

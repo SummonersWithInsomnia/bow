@@ -21,8 +21,12 @@ function CoursesComponent() {
 
     const getCourseData = async () => {
         let result = await udc.get("courses", "", {})
-            .then((data) => { return data })
-            .catch((data) => { return data });
+            .then((data) => {
+                return data
+            })
+            .catch((data) => {
+                return data
+            });
 
         if (result.status === 200) {
             setCourseData(result.data);
@@ -30,26 +34,30 @@ function CoursesComponent() {
     }
 
     const onSearchCourseNameOrCodeChange = (e) => {
-        setSearchQuery({...searchQuery,
+        setSearchQuery({
+            ...searchQuery,
             "name": e.target.value,
             "code": e.target.value
         });
     };
 
     const onDepartmentChange = (e) => {
-        setSearchQuery({...searchQuery,
+        setSearchQuery({
+            ...searchQuery,
             "department": e.target.value
         });
     };
 
     const onProgramChange = (e) => {
-        setSearchQuery({...searchQuery,
+        setSearchQuery({
+            ...searchQuery,
             "program": e.target.value
         });
     };
 
     const onTermChange = (e) => {
-        setSearchQuery({...searchQuery,
+        setSearchQuery({
+            ...searchQuery,
             "term": e.target.value
         });
     };
@@ -60,8 +68,12 @@ function CoursesComponent() {
 
     const getSearchCourseData = async (searchQuery) => {
         let result = await udc.get("courses", "", searchQuery)
-            .then((data) => { return data; })
-            .catch((data) => { return data; });
+            .then((data) => {
+                return data;
+            })
+            .catch((data) => {
+                return data;
+            });
 
         if (result.status === 200) {
             setCourseData(result.data);
@@ -75,10 +87,15 @@ function CoursesComponent() {
             </div>
 
             <div>
-                <SearchBoxComponent placeholder={"Course Name or Code..."} onChangeHandler={onSearchCourseNameOrCodeChange} />
-                <DropdownFilterComponent friendlyName="Department" options={["Software Development"]} onChangeHandler={onDepartmentChange} />
-                <DropdownFilterComponent friendlyName="Program" options={["Certificate (6 months)", "Post-Diploma (1 year)", "Diploma (2 years)"]} onChangeHandler={onProgramChange} />
-                <DropdownFilterComponent friendlyName="Term" options={["Fall", "Winter", "Spring", "Summer"]} onChangeHandler={onTermChange} />
+                <SearchBoxComponent placeholder={"Course Name or Code..."}
+                                    onChangeHandler={onSearchCourseNameOrCodeChange}/>
+                <DropdownFilterComponent friendlyName="Department" options={["Software Development"]}
+                                         onChangeHandler={onDepartmentChange}/>
+                <DropdownFilterComponent friendlyName="Program"
+                                         options={["Certificate (6 months)", "Post-Diploma (1 year)", "Diploma (2 years)"]}
+                                         onChangeHandler={onProgramChange}/>
+                <DropdownFilterComponent friendlyName="Term" options={["Fall", "Winter", "Spring", "Summer"]}
+                                         onChangeHandler={onTermChange}/>
             </div>
 
             <div>

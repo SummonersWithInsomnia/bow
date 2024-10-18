@@ -28,16 +28,22 @@ async function PostCreateCourse(token, jsonObj) {
     if (userType === "admins") {
         let uid = parseInt(token.substring(5));
 
-        let result = await lsh.read("admins", { id: uid })
-            .then((data) => { return data; });
+        let result = await lsh.read("admins", {id: uid})
+            .then((data) => {
+                return data;
+            });
         if (result.status === 200 && result.data.length === 1 && result.data[0].id === uid) {
             let newCourse = query;
             newCourse.availableSeats = newCourse.maxSeats;
             newCourse.deleted = false;
 
             let createNewCourseResult = await lsh.create("courses", newCourse)
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (createNewCourseResult.status === 200) {
                 return Promise.resolve({

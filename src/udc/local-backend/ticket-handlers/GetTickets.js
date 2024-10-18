@@ -4,17 +4,27 @@ async function GetTickets(token, jsonObj) {
     let userType = token.match("student") ? "students" : token.match("admin") ? "admins" : "";
     if (userType === "admins") {
         let uid = parseInt(token.substring(5));
-        let result = await lsh.read("admins", { id: uid })
-            .then((data) => { return data; });
+        let result = await lsh.read("admins", {id: uid})
+            .then((data) => {
+                return data;
+            });
         if (result.status === 200 && result.data.length === 1 && result.data[0].id === uid) {
             let ticketResult = await lsh.read("tickets", {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
             if (ticketResult.status === 200) {
                 let ticketData = ticketResult.data;
                 let studentResult = await lsh.read("students", {})
-                    .then((data) => { return data; })
-                    .catch((data) => { return data; });
+                    .then((data) => {
+                        return data;
+                    })
+                    .catch((data) => {
+                        return data;
+                    });
                 if (studentResult.status === 200) {
                     let studentData = studentResult.data;
                     for (let i = 0; i < ticketData.length; i++) {

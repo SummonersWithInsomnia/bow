@@ -7,13 +7,20 @@ function NavComponent() {
                 {JSON.parse(localStorage.getItem("user")) ? (
                     <>
                         <li><Link to="/dashboard">Dashboard</Link></li>
-                        {JSON.parse(localStorage.getItem("user")).type === "admin" && <li><Link to="/create-course">Create Course</Link></li>}
-                        {JSON.parse(localStorage.getItem("user")).type === "admin" && <li><Link to="/courses">Course Management</Link></li>}
-                        {JSON.parse(localStorage.getItem("user")).type === "admin" && <li><Link to="/student-list">Student List</Link></li>}
-                        {JSON.parse(localStorage.getItem("user")).type === "admin" && <li><Link to="/contact-ticket-viewer">View Contact Tickets</Link></li>}
-                        {JSON.parse(localStorage.getItem("user")).type === "student" && <li><Link to="/courses">Course Registration</Link></li>}
-                        {JSON.parse(localStorage.getItem("user")).type === "student" && <li><Link to="/my-courses">My Courses</Link></li>}
-                        {JSON.parse(localStorage.getItem("user")).type === "student" && <li><Link to="/contact-ticket-sender">Send Contact Ticket</Link></li>}
+                        {JSON.parse(localStorage.getItem("user")).type === "admin" &&
+                            <li><Link to="/create-course">Create Course</Link></li>}
+                        {JSON.parse(localStorage.getItem("user")).type === "admin" &&
+                            <li><Link to="/courses">Course Management</Link></li>}
+                        {JSON.parse(localStorage.getItem("user")).type === "admin" &&
+                            <li><Link to="/student-list">Student List</Link></li>}
+                        {JSON.parse(localStorage.getItem("user")).type === "admin" &&
+                            <li><Link to="/contact-ticket-viewer">View Contact Tickets</Link></li>}
+                        {JSON.parse(localStorage.getItem("user")).type === "student" &&
+                            <li><Link to="/courses">Course Registration</Link></li>}
+                        {JSON.parse(localStorage.getItem("user")).type === "student" &&
+                            <li><Link to="/my-courses">My Courses</Link></li>}
+                        {JSON.parse(localStorage.getItem("user")).type === "student" &&
+                            <li><Link to="/contact-ticket-sender">Send Contact Ticket</Link></li>}
                         <li><Link to="/profile">Profile</Link></li>
                         <li><Link to="/logout">Log out</Link></li>
                     </>

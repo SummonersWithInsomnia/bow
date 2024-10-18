@@ -1,6 +1,6 @@
 // Local Storage Helpers
 
-import { DATASETS } from "./datasets.config";
+import {DATASETS} from "./datasets.config";
 
 export class lsh {
     constructor() {

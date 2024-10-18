@@ -4,7 +4,7 @@ import RegisterCourseComponent from "../components/course-registration/RegisterC
 
 function RegisterCourseRoute() {
     document.title = "Register Course - " + APP_NAME;
-    const { id } = useParams();
+    const {id} = useParams();
 
     return (
         <main>

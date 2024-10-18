@@ -3,7 +3,7 @@ import {APP_NAME} from "../App.config";
 import DeleteCourseComponent from "../components/courses/DeleteCourse.component";
 
 function DeleteCourseRoute() {
-    const { id } = useParams();
+    const {id} = useParams();
 
     document.title = "Delete Course - " + APP_NAME;
 

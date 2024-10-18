@@ -12,8 +12,12 @@ function DashboardComponent() {
     const getDashboardData = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("dashboard", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserDetails(result.userdata);
@@ -31,11 +35,11 @@ function DashboardComponent() {
             {JSON.parse(localStorage.getItem("user")) ? (
                 <>
                     <form>
-                    <h2>Welcome to Dashboard</h2>
-                    <p>Hello, {userDetails.firstName} {userDetails.lastName}.</p>
-                    <p>Your {userDetails.type} ID is {userDetails.id}.</p>
-                    <p>Your department is {userDetails.department}.</p>
-                    {userDetails.type === "student" && <p>Your program is {userDetails.program}.</p>}
+                        <h2>Welcome to Dashboard</h2>
+                        <p>Hello, {userDetails.firstName} {userDetails.lastName}.</p>
+                        <p>Your {userDetails.type} ID is {userDetails.id}.</p>
+                        <p>Your department is {userDetails.department}.</p>
+                        {userDetails.type === "student" && <p>Your program is {userDetails.program}.</p>}
                     </form>
                 </>
             ) : (

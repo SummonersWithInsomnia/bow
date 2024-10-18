@@ -1,9 +1,10 @@
-import { COPYRIGHT } from "../../App.config";
+import {COPYRIGHT} from "../../App.config";
 
 function FooterComponent() {
-    return(
+    return (
         <footer>
-            <p>{ COPYRIGHT }. Code with ❤️ by <a target="_blank" href="https://github.com/SummonersWithInsomnia">Summoners with Insomnia</a></p>
+            <p>{COPYRIGHT}. Code with ❤️ by <a target="_blank" href="https://github.com/SummonersWithInsomnia">Summoners
+                with Insomnia</a></p>
         </footer>
     );
 }

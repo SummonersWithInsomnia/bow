@@ -6,7 +6,7 @@ function MyCoursesRoute() {
 
     return (
         <main>
-            <MyCoursesComponent />
+            <MyCoursesComponent/>
         </main>
     );
 }

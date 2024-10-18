@@ -6,7 +6,7 @@ function StudentListRoute() {
 
     return (
         <main>
-            <StudentListComponent />
+            <StudentListComponent/>
         </main>
     );
 }

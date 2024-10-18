@@ -5,7 +5,7 @@ function ProfileEditorRoute() {
     document.title = "Profile Editor - " + APP_NAME;
     return (
         <main>
-            <ProfileEditorComponent />
+            <ProfileEditorComponent/>
         </main>
     );
 }

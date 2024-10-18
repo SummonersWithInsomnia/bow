@@ -21,8 +21,12 @@ function MyCoursesComponent() {
 
     const getMyCourses = async () => {
         let result = await udc.get("my-courses", JSON.parse(localStorage.getItem("user")).token, {})
-            .then((data) => { return data; })
-            .catch((data) => { return data; });
+            .then((data) => {
+                return data;
+            })
+            .catch((data) => {
+                return data;
+            });
 
         if (result.status === 200) {
             setMyCourses(result.data);
@@ -32,8 +36,12 @@ function MyCoursesComponent() {
     const getUserInfo = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("user", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserInfo(result.userdata);

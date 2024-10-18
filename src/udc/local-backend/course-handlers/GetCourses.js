@@ -1,4 +1,4 @@
-const { lsh } = require("../lsh/lsh");
+const {lsh} = require("../lsh/lsh");
 
 async function GetCourses(token, jsonObj) {
     let query = JSON.parse(jsonObj);
@@ -35,8 +35,12 @@ async function GetCourses(token, jsonObj) {
         safeOtherQueryItems.deleted = false;
 
         let result = await lsh.read("courses", safeOtherQueryItems)
-            .then((data) => { return data;})
-            .catch((data) => { return data; });
+            .then((data) => {
+                return data;
+            })
+            .catch((data) => {
+                return data;
+            });
 
 
         if (result.status === 200) {

@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { udc } from "../../udc/udc";
-import { USER_LOGGED_IN_ENTRANCE } from "../../App.config";
+import {useState} from "react";
+import {udc} from "../../udc/udc";
+import {USER_LOGGED_IN_ENTRANCE} from "../../App.config";
 
 function SignupComponent() {
     const [signupFormData, setSignupFormData] = useState({
@@ -61,7 +61,8 @@ function SignupComponent() {
                 } else {
                     setUsernameTip("");
                 }
-                setSignupFormData({...signupFormData,
+                setSignupFormData({
+                    ...signupFormData,
                     ["username"]: e.target.value
                 });
                 break;
@@ -72,7 +73,8 @@ function SignupComponent() {
                 } else {
                     setPasswordTip("");
                 }
-                setSignupFormData({...signupFormData,
+                setSignupFormData({
+                    ...signupFormData,
                     ["password"]: e.target.value
                 });
                 break;
@@ -91,7 +93,8 @@ function SignupComponent() {
                 } else {
                     setFirstNameTip("");
                 }
-                setSignupFormData({...signupFormData,
+                setSignupFormData({
+                    ...signupFormData,
                     ["firstName"]: e.target.value
                 });
                 break;
@@ -102,7 +105,8 @@ function SignupComponent() {
                 } else {
                     setLastNameTip("");
                 }
-                setSignupFormData({...signupFormData,
+                setSignupFormData({
+                    ...signupFormData,
                     ["lastName"]: e.target.value
                 });
                 break;
@@ -113,13 +117,15 @@ function SignupComponent() {
                 } else {
                     setEmailTip("");
                 }
-                setSignupFormData({...signupFormData,
+                setSignupFormData({
+                    ...signupFormData,
                     ["email"]: e.target.value
                 });
                 break;
 
             case "tbPhoneCountryCode":
-                setSignupFormData({...signupFormData,
+                setSignupFormData({
+                    ...signupFormData,
                     ["phoneCountryCode"]: Number(e.target.value)
                 });
                 break;
@@ -130,25 +136,29 @@ function SignupComponent() {
                 } else {
                     setPhoneNumberTip("");
                 }
-                setSignupFormData({...signupFormData,
+                setSignupFormData({
+                    ...signupFormData,
                     ["phoneNumber"]: Number(e.target.value)
                 });
                 break;
 
             case "tbBirthday":
-                setSignupFormData({...signupFormData,
+                setSignupFormData({
+                    ...signupFormData,
                     ["birthday"]: e.target.value
                 });
                 break;
 
             case "tbDepartment":
-                setSignupFormData({...signupFormData,
+                setSignupFormData({
+                    ...signupFormData,
                     ["department"]: e.target.value
                 });
                 break;
 
             case "tbProgram":
-                setSignupFormData({...signupFormData,
+                setSignupFormData({
+                    ...signupFormData,
                     ["program"]: e.target.value
                 });
                 break;
@@ -168,11 +178,15 @@ function SignupComponent() {
             if (signupFormData.program === "") signupFormData.program = "Certificate (6 months)";
 
             let result = await udc.post("signup-student", "", signupFormData)
-                .then((data) => { return data })
-                .catch((data) => { return data });
+                .then((data) => {
+                    return data
+                })
+                .catch((data) => {
+                    return data
+                });
 
             if (result.status === 200) {
-                const loggedInUser = { type: result.userdata.type, token: result.userdata.token };
+                const loggedInUser = {type: result.userdata.type, token: result.userdata.token};
                 localStorage.setItem("user", JSON.stringify(loggedInUser));
                 window.location.href = USER_LOGGED_IN_ENTRANCE;
             } else {

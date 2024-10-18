@@ -3,7 +3,7 @@ import {udc} from "../../udc/udc";
 import {GUEST_ENTRANCE, USER_LOGGED_IN_ENTRANCE} from "../../App.config";
 import {Link} from "react-router-dom";
 
-function EditCourseComponent({ id }) {
+function EditCourseComponent({id}) {
     const [userInfo, setUserInfo] = useState({});
     const [courseData, setCourseData] = useState({});
     const [courseError, setCourseError] = useState("");
@@ -48,8 +48,12 @@ function EditCourseComponent({ id }) {
     const getUserInfo = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("user", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserInfo(result.userdata);
@@ -64,8 +68,12 @@ function EditCourseComponent({ id }) {
 
     const getCourseData = async () => {
         let result = await udc.get("courses", "", {id: Number(id)})
-            .then((data) => { return data })
-            .catch((data) => { return data });
+            .then((data) => {
+                return data
+            })
+            .catch((data) => {
+                return data
+            });
 
         if (result.status === 200) {
             setCourseData(result.data[0]);
@@ -104,7 +112,8 @@ function EditCourseComponent({ id }) {
                 } else {
                     setNameTip("");
                 }
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["name"]: e.target.value
                 });
                 break;
@@ -115,49 +124,57 @@ function EditCourseComponent({ id }) {
                 } else {
                     setCodeTip("");
                 }
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["code"]: e.target.value
                 });
                 break;
 
             case "tbDepartment":
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["department"]: e.target.value
                 });
                 break;
 
             case "tbProgram":
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["program"]: e.target.value
                 });
                 break;
 
             case "tbTerm":
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["term"]: e.target.value
                 });
                 break;
 
             case "tbWeekDay":
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["weekDay"]: e.target.value
                 });
                 break;
 
             case "tbCampus":
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["campus"]: e.target.value
                 });
                 break;
 
             case "tbDeliveryMethod":
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["deliveryMethod"]: e.target.value
                 });
                 break;
 
             case "tbMaxSeats":
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["maxSeats"]: Number(e.target.value)
                 });
                 break;
@@ -168,31 +185,36 @@ function EditCourseComponent({ id }) {
                 } else {
                     setDescriptionTip("");
                 }
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["description"]: e.target.value
                 });
                 break;
 
             case "tbStartDate":
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["startDate"]: e.target.value
                 });
                 break;
 
             case "tbEndDate":
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["endDate"]: e.target.value
                 });
                 break;
 
             case "tbStartTime":
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["startTime"]: e.target.value
                 });
                 break;
 
             case "tbEndTime":
-                setCourseData({...courseData,
+                setCourseData({
+                    ...courseData,
                     ["endTime"]: e.target.value
                 });
                 break;
@@ -210,8 +232,12 @@ function EditCourseComponent({ id }) {
 
         if (nameTip === "" && codeTip === "" && descriptionTip === "" && endDateTip === "" && endTimeTip === "" && maxSeatsTip === "") {
             let result = await udc.put("course", JSON.parse(localStorage.getItem("user")).token, courseData)
-                .then((data) => { return data })
-                .catch((data) => { return data });
+                .then((data) => {
+                    return data
+                })
+                .catch((data) => {
+                    return data
+                });
 
             if (result.status === 200) {
                 setEditCourseMessage(result.message);
@@ -448,7 +474,7 @@ function EditCourseComponent({ id }) {
                         </>
                     ) : (
                         <form>
-                        <h2>Edit Course</h2>
+                            <h2>Edit Course</h2>
                             <p>This function is only available for admins.</p>
                         </form>
                     )}

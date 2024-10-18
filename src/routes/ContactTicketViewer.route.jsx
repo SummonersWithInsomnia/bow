@@ -6,7 +6,7 @@ function ContactTicketViewerRoute() {
 
     return (
         <main>
-            <TicketViewerComponent />
+            <TicketViewerComponent/>
         </main>
     );
 }

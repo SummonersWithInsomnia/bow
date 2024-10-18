@@ -6,7 +6,7 @@ function ProgramsRoute() {
 
     return (
         <main>
-            <ProgramsComponent />
+            <ProgramsComponent/>
         </main>
     );
 }

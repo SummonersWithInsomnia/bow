@@ -15,15 +15,28 @@ async function DeleteCourse(token, jsonObj) {
 
     if (userType === "admins") {
         let uid = parseInt(token.substring(5));
-        let result = await lsh.read("admins", { id: uid })
-            .then((data) => { return data; });
+        let result = await lsh.read("admins", {id: uid})
+            .then((data) => {
+                return data;
+            });
         if (result.status === 200 && result.data.length === 1 && result.data[0].id === uid) {
-            let deleteCourseRegistrationResult =  await lsh.deleteMultiple("course-registration", { fk: "course", fkValue: Number(query.id) })
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
-            let deleteCourseResult = await lsh.delete("courses", { id: Number(query.id) })
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+            let deleteCourseRegistrationResult = await lsh.deleteMultiple("course-registration", {
+                fk: "course",
+                fkValue: Number(query.id)
+            })
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
+            let deleteCourseResult = await lsh.delete("courses", {id: Number(query.id)})
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (deleteCourseResult.status === 200 && deleteCourseRegistrationResult.status === 200) {
                 return Promise.resolve({

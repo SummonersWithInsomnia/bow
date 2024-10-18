@@ -5,8 +5,10 @@ async function GetProfile(token, jsonObj) {
     if (userType === "students") {
         let uid = parseInt(token.substring(7));
 
-        let result = await lsh.read("students", { id: uid })
-            .then((data) => { return data; });
+        let result = await lsh.read("students", {id: uid})
+            .then((data) => {
+                return data;
+            });
         if (result.status === 200 && result.data.length === 1) {
             return Promise.resolve({
                 "status": 200,
@@ -29,8 +31,10 @@ async function GetProfile(token, jsonObj) {
         }
     } else if (userType === "admins") {
         let uid = parseInt(token.substring(5));
-        let result = await lsh.read("admins", { id: uid })
-            .then((data) => { return data; });
+        let result = await lsh.read("admins", {id: uid})
+            .then((data) => {
+                return data;
+            });
         if (result.status === 200 && result.data.length === 1) {
             return Promise.resolve({
                 "status": 200,

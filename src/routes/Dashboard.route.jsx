@@ -6,7 +6,7 @@ function DashboardRoute() {
 
     return (
         <main>
-            <DashboardComponent />
+            <DashboardComponent/>
         </main>
 
     );

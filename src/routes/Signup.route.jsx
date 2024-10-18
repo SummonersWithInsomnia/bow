@@ -10,7 +10,7 @@ function SignupRoute() {
 
     return (
         <main>
-            <SignupComponent />
+            <SignupComponent/>
         </main>
     );
 }

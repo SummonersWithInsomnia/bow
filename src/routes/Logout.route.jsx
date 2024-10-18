@@ -6,7 +6,7 @@ function LogoutRoute() {
 
     return (
         <main>
-            <LogoutComponent />
+            <LogoutComponent/>
         </main>
     );
 }

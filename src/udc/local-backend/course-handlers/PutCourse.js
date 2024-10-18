@@ -31,16 +31,22 @@ async function PutCourse(token, jsonObj) {
 
     if (userType === "admins") {
         let uid = parseInt(token.substring(5));
-        let result = await lsh.read("admins", { id: uid })
-            .then((data) => { return data; });
+        let result = await lsh.read("admins", {id: uid})
+            .then((data) => {
+                return data;
+            });
 
         if (result.status === 200 && result.data.length === 1 && result.data[0].id === uid) {
-            let existCourseResult = await lsh.read("courses", { id: query.id })
-                .then((data) => { return data; });
+            let existCourseResult = await lsh.read("courses", {id: query.id})
+                .then((data) => {
+                    return data;
+                });
 
             if (existCourseResult.status === 200) {
                 let updateResult = await lsh.update("courses", query)
-                    .then((data) => { return data; });
+                    .then((data) => {
+                        return data;
+                    });
                 if (updateResult.status === 200) {
                     return Promise.resolve({
                         "status": 200,

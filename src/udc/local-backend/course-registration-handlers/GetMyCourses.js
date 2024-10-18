@@ -6,16 +6,22 @@ async function GetMyCourses(token, jsonObj) {
     if (userType === "students") {
         let uid = parseInt(token.substring(7));
 
-        let result = await lsh.read("course-registration", { student: uid, deleted: false })
-            .then((data) => { return data })
-            .catch((data) => { return data });
+        let result = await lsh.read("course-registration", {student: uid, deleted: false})
+            .then((data) => {
+                return data
+            })
+            .catch((data) => {
+                return data
+            });
 
         if (result.status === 200 && result.data.length !== 0) {
             let myCourses = [];
 
             for (let i = 0; i < result.data.length; i++) {
-                let course = await lsh.read("courses", { id: result.data[i].course, deleted: false })
-                    .then((data) => { return data.data[0] });
+                let course = await lsh.read("courses", {id: result.data[i].course, deleted: false})
+                    .then((data) => {
+                        return data.data[0]
+                    });
                 course.registrationId = result.data[i].id;
                 myCourses.push(course);
             }

@@ -15,8 +15,12 @@ function CourseDetailsComponent({id}) {
     const getUserInfo = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("user", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserInfo(result.userdata);
@@ -28,8 +32,12 @@ function CourseDetailsComponent({id}) {
 
     const getCourseData = async () => {
         let result = await udc.get("courses", "", {id: Number(id)})
-            .then((data) => { return data })
-            .catch((data) => { return data });
+            .then((data) => {
+                return data
+            })
+            .catch((data) => {
+                return data
+            });
 
         if (result.status === 200) {
             setCourseData(result.data[0]);
@@ -83,12 +91,14 @@ function CourseDetailsComponent({id}) {
                                     }
                                     {
                                         userInfo.type === "student" && (<>
-                                            <br />
-                                            <div className="regLink"><Link to={"/register-course/" + courseData.id}>Register Course</Link></div>
+                                            <br/>
+                                            <div className="regLink"><Link to={"/register-course/" + courseData.id}>Register
+                                                Course</Link></div>
                                         </>)
                                     }
                                 </>) : (<>
-                                    <p>Interested in this course? <Link to="/login">Log in</Link> or <Link to="/signup">Sign up</Link> to register it now!</p>
+                                    <p>Interested in this course? <Link to="/login">Log in</Link> or <Link to="/signup">Sign
+                                        up</Link> to register it now!</p>
                                 </>)
                             }
                         </div>

@@ -4,7 +4,7 @@ import DropCourseComponent from "../components/course-registration/DropCourse.co
 
 function DropCourseRoute() {
     document.title = "Drop Course - " + APP_NAME;
-    const { id } = useParams();
+    const {id} = useParams();
 
     return (
         <main>

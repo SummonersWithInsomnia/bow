@@ -13,8 +13,12 @@ function ProfileComponent() {
     const getUserProfile = async () => {
         if (JSON.parse(localStorage.getItem("user")) !== null) {
             let result = await udc.get("profile", JSON.parse(localStorage.getItem("user")).token, {})
-                .then((data) => { return data; })
-                .catch((data) => { return data; });
+                .then((data) => {
+                    return data;
+                })
+                .catch((data) => {
+                    return data;
+                });
 
             if (result.status === 200) {
                 setUserProfile(result.userdata);
@@ -32,18 +36,18 @@ function ProfileComponent() {
             {JSON.parse(localStorage.getItem("user")) ? (
                 <>
                     <form>
-                    <div>
-                        <h2>My Profile</h2>
-                        <p>First Name: {userProfile.firstName}</p>
-                        <p>Last Name: {userProfile.lastName}</p>
-                        <p>Email: {userProfile.email}</p>
-                        <p>Phone: +{userProfile.phoneCountryCode} {userProfile.phoneNumber}</p>
-                        <p>Birthday: {userProfile.birthday}</p>
-                    </div>
-                    <div>
-                        <br />
-                        <Link to="/profile-editor">Edit My Profile</Link>
-                    </div>
+                        <div>
+                            <h2>My Profile</h2>
+                            <p>First Name: {userProfile.firstName}</p>
+                            <p>Last Name: {userProfile.lastName}</p>
+                            <p>Email: {userProfile.email}</p>
+                            <p>Phone: +{userProfile.phoneCountryCode} {userProfile.phoneNumber}</p>
+                            <p>Birthday: {userProfile.birthday}</p>
+                        </div>
+                        <div>
+                            <br/>
+                            <Link to="/profile-editor">Edit My Profile</Link>
+                        </div>
                     </form>
                 </>
             ) : (
