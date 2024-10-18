@@ -1,206 +1,396 @@
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* footer */
 footer {
-  background-color: #6CA6C1;
-  justify-content: center;
-  padding: 0 20px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
+    background-color: #6CA6C1;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
 }
 
 footer p {
-  margin: 0 10px;
-  color: #F4E3B2;
-  display: inline;
+    margin: 0 10px;
+    color: #F4E3B2;
+    display: inline;
 }
 
 footer a {
-  color: #ffd700;
-  text-decoration: none;
-  margin-left: 5px;
+    color: #ffd700;
+    text-decoration: none;
+    margin-left: 5px;
 }
 
 footer a:hover {
-  text-decoration: underline;
-  color: #F4E3B2;
+    text-decoration: underline;
+    color: #F4E3B2;
 }
 
 footer span {
-  margin: 0 10px;
+    margin: 0 10px;
 }
 
 
 /* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #6CA6C1;
-  padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6CA6C1;
+    padding: 15px 30px;
 }
 
 header h1 {
-  font-size: 24px;
-  margin: 0;
+    font-size: 24px;
+    margin: 0;
 }
 
 header h1 a {
-  text-decoration: none;
-  color: #F4E3B2;
+    text-decoration: none;
+    color: #F4E3B2;
 }
 
 nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-  margin-right: 20px;
+    margin-right: 20px;
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: #F4E3B2;
-  font-size: 16px;
+    text-decoration: none;
+    color: #F4E3B2;
+    font-size: 16px;
 }
 
 nav ul li a:hover {
-  color: #ffd700;
-  text-decoration: underline;
+    color: #ffd700;
+    text-decoration: underline;
 }
 
 nav ul li:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 
 /* Form */
 
 form {
-  max-width: 400px;
-  margin: 100px auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 }
 
 form h2 {
-  text-align: center;
-  color: #302E41;
-  font-size: 24px;
-  margin-bottom: 20px;
+    text-align: center;
+    color: #302E41;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 form input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
 form p {
-  color: black;
-  font-weight:500;
-  text-align: center;
+    color: black;
+    font-weight: 500;
+    text-align: center;
 }
 
 form button[name="btnSubmit"] {
-  width: 100%;
-  padding: 10px;
-  background-color: #6CA6C1;
-  color: #F4E3B2;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    background-color: #6CA6C1;
+    color: #F4E3B2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 form button[name="btnSubmit"]:hover {
-  background-color: #5a94ac;
-  color: #ffd700;
+    background-color: #5a94ac;
+    color: #ffd700;
 }
 
 form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #dddddd;
-  color: #333333;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    background-color: #dddddd;
+    color: #333333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 form button:hover {
-  background-color: #cccccc;
+    background-color: #CCCCCC;
 }
 
 form a {
-  color: #6CA6C1;
-  text-decoration: none;
+    color: #6CA6C1;
+    text-decoration: none;
 }
 
 form a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* for the dropdown */
 form select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  font-size: 14px;
-  background-color: white;
-  cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+/* Programs */
+.ProgramContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 70px;
+    gap: 20px;
+}
+
+.ProgramBox {
+    width: 90%;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border: 1px solid #CCCCCC;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ProgramBox:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ProgramBox h2 {
+    margin-bottom: 10px;
+    color: #333333;
+    font-size: 24px;
+}
+
+.ProgramBox p {
+    margin: 5px 0;
+    color: #555555;
+    text-align: left;
+}
+
+/* tables */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+th {
+    background-color: #6CA6C1;
+    color: #F4E3B2;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #dddddd;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #dddddd;
+    width: 100px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+tbody tr:hover {
+    background-color: #d0e9f5;
+}
+
+td a {
+    color: #6CA6C1;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* Course Registration: Search Box */
+.searchBox input[type="search"] {
+    width: 250px;
+    padding: 3px;
+    margin: 3px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.dropdownSelect {
+    width: 250px;
+    padding: 3px;
+    margin: 3px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+}
+
+.dropdownFilter {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+/* Course Details */
+.courseDetails {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.courseDetails p {
+    font-size: 16px;
+    line-height: 1.1;
+}
+
+.courseDetails p span {
+    font-weight: bold;
+}
+
+.courseDetails h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.regLink a {
+    color: #5a94ac;
+    font-size: 20px;
+}
+
+.regButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #6CA6C1;
+    color: #F4E3B2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6CA6C1;
+    color: #F4E3B2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #5a94ac;
+    color: #ffd700;
+}
+
+/* Sending a message */
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    min-height: 100px;
+    resize: none;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
 }

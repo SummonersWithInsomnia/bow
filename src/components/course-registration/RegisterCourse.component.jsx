@@ -52,7 +52,7 @@ function RegisterCourseComponent({id}) {
                                 <form onSubmit={getResult}>
                                     <h2>Register Course?</h2>
                                     <p>{message}</p>
-                                    <button type="submit">Confirm</button>
+                                    <button className="regButton" type="submit">Confirm</button>
                                 </form>
                             ) : (
                                 <form>

@@ -1,11 +1,13 @@
-function SearchBoxComponent({ placeholder, onChangeHandler }) {
-    return(
+function SearchBoxComponent({placeholder, onChangeHandler}) {
+    return (
         <>
-            <input
-                type="search"
-                placeholder={ placeholder }
-                onChange={ onChangeHandler }
-            />
+            <div className="searchBox">
+                <input
+                    type="search"
+                    placeholder={placeholder}
+                    onChange={onChangeHandler}
+                />
+            </div>
         </>
     );
 }

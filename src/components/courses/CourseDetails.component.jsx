@@ -55,20 +55,20 @@ function CourseDetailsComponent({id}) {
                             <h2>{courseData.name}</h2>
                         </div>
 
-                        <div>
-                            <p>Course Code: {courseData.code}</p>
-                            <p>Department: {courseData.department}</p>
-                            <p>Program: {courseData.program}</p>
-                            <p>Term: {courseData.term}</p>
-                            <p>Start Date: {courseData.startDate}</p>
-                            <p>End Date: {courseData.endDate}</p>
-                            <p>Week Day: {courseData.weekDay}</p>
-                            <p>Start Time of Day: {courseData.startTime}</p>
-                            <p>End Time of Day: {courseData.endTime}</p>
-                            <p>Delivery Method: {courseData.deliveryMethod}</p>
-                            <p>Maximum Seats: {courseData.maxSeats}</p>
-                            <p>Available Seats: {courseData.availableSeats}</p>
-                            <p>Description: {courseData.description}</p>
+                        <div className="courseDetails">
+                            <p><span>Course Code:</span> {courseData.code}</p>
+                            <p><span>Department:</span> {courseData.department}</p>
+                            <p><span>Program:</span> {courseData.program}</p>
+                            <p><span>Term:</span> {courseData.term}</p>
+                            <p><span>Start Date:</span> {courseData.startDate}</p>
+                            <p><span>End Date:</span> {courseData.endDate}</p>
+                            <p><span>Week Day:</span> {courseData.weekDay}</p>
+                            <p><span>Start Time of Day:</span> {courseData.startTime}</p>
+                            <p><span>End Time of Day:</span> {courseData.endTime}</p>
+                            <p><span>Delivery Method:</span> {courseData.deliveryMethod}</p>
+                            <p><span>Maximum Seats:</span> {courseData.maxSeats}</p>
+                            <p><span>Available Seats:</span> {courseData.availableSeats}</p>
+                            <p><span>Description:</span> {courseData.description}</p>
                         </div>
 
                         <div>
@@ -83,7 +83,8 @@ function CourseDetailsComponent({id}) {
                                     }
                                     {
                                         userInfo.type === "student" && (<>
-                                            <div><Link to={"/register-course/" + courseData.id}>Register Course</Link></div>
+                                            <br />
+                                            <div className="regLink"><Link to={"/register-course/" + courseData.id}>Register Course</Link></div>
                                         </>)
                                     }
                                 </>) : (<>

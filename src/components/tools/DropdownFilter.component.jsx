@@ -1,7 +1,7 @@
 function DropdownFilterComponent( { friendlyName, options, onChangeHandler } ) {
     return(
-        <div>
-            <select onChange={onChangeHandler}>
+        <div className="dropdownFilter">
+            <select className="dropdownSelect" onChange={onChangeHandler}>
                 <option value="">{friendlyName}</option>
                 {options.map((option) => (<option key={option} value={option}>{option}</option>))}
             </select>
