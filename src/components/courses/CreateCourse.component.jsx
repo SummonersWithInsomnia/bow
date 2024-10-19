@@ -236,7 +236,7 @@ function CreateCourseComponent() {
             {JSON.parse(localStorage.getItem("user")) ? (
                 <>
                     {userInfo.type === "admin" ? (
-                        <form classname="createCourse" onSubmit={handleCreateCourse}>
+                        <form className="createCourse" onSubmit={handleCreateCourse}>
                             <div>
                                 <h2>Create Course</h2>
                             </div>
