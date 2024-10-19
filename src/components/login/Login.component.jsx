@@ -86,7 +86,7 @@ function LoginComponent() {
                 </form>
                 {
                     studentVersion &&
-                    <div>
+                    <div className="regLink">
                         <p>Not registered yet? <Link to="/signup">Sign up</Link> now!</p>
                     </div>
                 }
