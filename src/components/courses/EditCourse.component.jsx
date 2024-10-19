@@ -461,10 +461,12 @@ function EditCourseComponent({id}) {
                                             </div>
 
                                             <div>
+                                                <br/>
                                                 <button type="submit" name="btnSubmit">Edit Course</button>
                                             </div>
 
                                             <div>
+                                                <br />
                                                 <Link to={"/course-details/" + courseData.id}>Back to Course Details</Link>
                                             </div>
                                         </form>
