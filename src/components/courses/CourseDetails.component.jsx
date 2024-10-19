@@ -84,22 +84,26 @@ function CourseDetailsComponent({id}) {
                                 JSON.parse(localStorage.getItem("user")) !== null ? (<>
                                     {
                                         userInfo.type === "admin" && (<>
-                                            <div><Link className="regLink" to={"/student-list/" + courseData.id}>Student List of Course</Link></div>
-                                            <div><Link className="regLink" to={"/edit-course/" + courseData.id}>Edit Course</Link></div>
-                                            <div><Link className="regLink" to={"/delete-course/" + courseData.id}>Delete Course</Link></div>
+                                            <br/>
+                                            <div className="regLink"><Link to={"/student-list/" + courseData.id}>Student
+                                                List of Course</Link></div>
+                                            <div className="regLink"><Link to={"/edit-course/" + courseData.id}>Edit
+                                                Course</Link></div>
+                                            <div className="regLink"><Link to={"/delete-course/" + courseData.id}>Delete
+                                                Course</Link></div>
                                         </>)
                                     }
                                     {
                                         userInfo.type === "student" && (<>
                                             <br/>
-                                            <div className="regLink"><Link to={"/register-course/" + courseData.id}>Register
-                                                Course</Link></div>
+                                            <div className="regLink"><Link to={"/register-course/" + courseData.id}>Register Course</Link></div>
                                         </>)
                                     }
-                                </>) : (<>
+                                </>) : (<div className="regLink">
+                                    <br/>
                                     <p>Interested in this course? <Link to="/login">Log in</Link> or <Link to="/signup">Sign
                                         up</Link> to register it now!</p>
-                                </>)
+                                </div>)
                             }
                         </div>
                     </>
