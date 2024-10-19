@@ -84,9 +84,9 @@ function CourseDetailsComponent({id}) {
                                 JSON.parse(localStorage.getItem("user")) !== null ? (<>
                                     {
                                         userInfo.type === "admin" && (<>
-                                            <div><Link to={"/student-list/" + courseData.id}>Student List of Course</Link></div>
-                                            <div><Link to={"/edit-course/" + courseData.id}>Edit Course</Link></div>
-                                            <div><Link to={"/delete-course/" + courseData.id}>Delete Course</Link></div>
+                                            <div><Link className="regLink" to={"/student-list/" + courseData.id}>Student List of Course</Link></div>
+                                            <div><Link className="regLink" to={"/edit-course/" + courseData.id}>Edit Course</Link></div>
+                                            <div><Link className="regLink" to={"/delete-course/" + courseData.id}>Delete Course</Link></div>
                                         </>)
                                     }
                                     {

@@ -96,7 +96,7 @@ function DeleteCourseComponent({id}) {
                                             <h2>Delete Course</h2>
                                         </div>
 
-                                        <div>
+                                        <div className="courseDetails">
                                             <h3>Are you sure to delete the following course?</h3>
                                             <p>Course Name: {courseData.name}</p>
                                             <p>Course Code: {courseData.code}</p>
@@ -119,10 +119,15 @@ function DeleteCourseComponent({id}) {
                                         </div>
 
                                         <div>
+                                            <br/>
                                             <div>
-                                                <button onClick={deleteCourseHandler}>Delete</button>
+                                                <button className="deleteButton" onClick={deleteCourseHandler}>Delete
+                                                </button>
                                             </div>
-                                            <div><Link to={"/course-details/" + courseData.id}>Back to Course Details</Link>
+                                            <br/>
+                                            <div className="regLink">
+                                                <Link to={"/course-details/" + courseData.id}>Back to Course
+                                                    Details</Link>
                                             </div>
                                         </div>
                                     </>
