@@ -67,7 +67,7 @@ function EditCourseComponent({id}) {
     }
 
     const getCourseData = async () => {
-        let result = await udc.get("courses", "", {id: Number(id)})
+        let result = await udc.post("courses", "", {id: Number(id)})
             .then((data) => {
                 return data
             })
@@ -79,7 +79,7 @@ function EditCourseComponent({id}) {
             setCourseData(result.data[0]);
             setMinSeats(result.data[0].maxSeats - result.data[0].availableSeats);
         } else {
-            setCourseError("The course is not exist.")
+            setCourseError("The course does not exist.")
         }
     }
 
