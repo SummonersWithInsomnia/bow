@@ -1,6 +1,6 @@
 import {lsh} from "../lsh/lsh";
 
-async function GetStudentListByCourse(token, jsonObj) {
+async function PostSearchStudentListByCourse(token, jsonObj) {
     let userType = token.match("student") ? "students" : token.match("admin") ? "admins" : "";
     let query = JSON.parse(jsonObj);
 
@@ -71,4 +71,4 @@ async function GetStudentListByCourse(token, jsonObj) {
     }
 }
 
-export default GetStudentListByCourse
+export default PostSearchStudentListByCourse

@@ -47,7 +47,7 @@ function StudentListComponent() {
     }, [searchQuery]);
 
     const getSearchStudentData = async (searchQuery) => {
-        let result = await udc.get("student-list", JSON.parse(localStorage.getItem("user")).token, searchQuery)
+        let result = await udc.post("student-list", JSON.parse(localStorage.getItem("user")).token, searchQuery)
             .then((data) => {
                 return data;
             })

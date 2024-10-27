@@ -14,8 +14,8 @@ import GetTickets from "./ticket-handlers/GetTickets";
 import PostCreateCourse from "./course-handlers/PostCreateCourse";
 import DeleteCourse from "./course-handlers/DeleteCourse";
 import PutCourse from "./course-handlers/PutCourse";
-import GetStudentList from "./student-handlers/GetStudentList";
-import GetStudentListByCourse from "./student-handlers/GetStudentListByCourse";
+import PostSearchStudentList from "./student-handlers/PostSearchStudentList";
+import PostSearchStudentListByCourse from "./student-handlers/PostSearchStudentListByCourse";
 import PostRegisterCourse from "./course-registration-handlers/PostRegisterCourse";
 import DeleteDropCourse from "./course-registration-handlers/DeleteDropCourse";
 import GetMyCourses from "./course-registration-handlers/GetMyCourses";
@@ -39,12 +39,6 @@ export class lb {
             case "tickets":
                 return await GetTickets(token);
 
-            case "student-list":
-                return await GetStudentList(token);
-
-            case "student-list-by-course":
-                return await GetStudentListByCourse(token);
-
             case "my-courses":
                 return await GetMyCourses(token);
 
@@ -57,6 +51,12 @@ export class lb {
         switch (path) {
             case "courses":
                 return await PostSearchCourses(token, jsonObj);
+
+            case "student-list":
+                return await PostSearchStudentList(token, jsonObj);
+
+            case "student-list-by-course":
+                return await PostSearchStudentListByCourse(token, jsonObj);
 
             case "login-student":
                 return await PostLoginStudent(token, jsonObj);

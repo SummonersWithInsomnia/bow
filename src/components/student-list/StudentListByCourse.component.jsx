@@ -36,7 +36,7 @@ function StudentListByCourseComponent({id}) {
     }
 
     const getData = async () => {
-        let result = await udc.get("student-list-by-course", JSON.parse(localStorage.getItem("user")).token, {id: Number(id)})
+        let result = await udc.post("student-list-by-course", JSON.parse(localStorage.getItem("user")).token, {id: Number(id)})
             .then((data) => {
                 return data;
             })
@@ -49,7 +49,7 @@ function StudentListByCourseComponent({id}) {
                 setData(result.data);
                 console.log(result.data);
             } else {
-                setCourseError("The course is not exist.")
+                setCourseError("The course does not exist.")
             }
         } catch (error) {
         }

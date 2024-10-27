@@ -1,6 +1,6 @@
 import {lsh} from "../lsh/lsh";
 
-async function GetTickets(token, jsonObj) {
+async function GetTickets(token) {
     let userType = token.match("student") ? "students" : token.match("admin") ? "admins" : "";
     if (userType === "admins") {
         let uid = parseInt(token.substring(5));

@@ -1,6 +1,6 @@
 import {lsh} from "../lsh/lsh";
 
-async function GetProfile(token, jsonObj) {
+async function GetProfile(token) {
     let userType = token.match("student") ? "students" : token.match("admin") ? "admins" : "";
     if (userType === "students") {
         let uid = parseInt(token.substring(7));

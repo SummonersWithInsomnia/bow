@@ -1,6 +1,6 @@
 import {lsh} from "../lsh/lsh";
 
-async function GetMyCourses(token, jsonObj) {
+async function GetMyCourses(token) {
     let userType = token.match("student") ? "students" : token.match("admin") ? "admins" : "";
 
     if (userType === "students") {
