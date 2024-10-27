@@ -1,6 +1,6 @@
 // Local Backend
 
-import GetCourses from "./course-handlers/GetCourses";
+import PostSearchCourses from "./course-handlers/PostSearchCourses";
 import UnreachablePath from "./error-handlers/UnreachablePath";
 import PostLoginStudent from "./student-handlers/PostLoginStudent";
 import PostLoginAdmin from "./admin-handlers/PostLoginAdmin";
@@ -56,7 +56,7 @@ export class lb {
     static async post(path, token, jsonObj) {
         switch (path) {
             case "courses":
-                return await GetCourses(token, jsonObj);
+                return await PostSearchCourses(token, jsonObj);
 
             case "login-student":
                 return await PostLoginStudent(token, jsonObj);

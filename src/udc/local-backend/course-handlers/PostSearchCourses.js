@@ -1,6 +1,6 @@
 const {lsh} = require("../lsh/lsh");
 
-async function GetCourses(token, jsonObj) {
+async function PostSearchCourses(token, jsonObj) {
     let query = JSON.parse(jsonObj);
     if (Object.keys(query).length === 0) {
         return await lsh.read("courses", {"deleted": false});
@@ -75,4 +75,4 @@ async function GetCourses(token, jsonObj) {
     }
 }
 
-export default GetCourses
+export default PostSearchCourses
