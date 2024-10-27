@@ -82,6 +82,10 @@ function TicketViewerComponent() {
                                     }
                                     </tbody>
                                 </table>
+                                {
+                                    ticketData.length === 0 &&
+                                    <p>No Data</p>
+                                }
                             </div>
                         </>
                     ) : (
