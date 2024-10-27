@@ -250,6 +250,8 @@ function EditCourseComponent({id}) {
                     setEditCourseMessage("")
                 }, 3000);
             }
+        } else {
+            setEditCourseMessage("");
         }
     };
 

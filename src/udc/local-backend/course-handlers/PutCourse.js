@@ -17,9 +17,9 @@ async function PutCourse(token, jsonObj) {
         !query.hasOwnProperty("endTime") ||
         !query.hasOwnProperty("campus") ||
         !query.hasOwnProperty("deliveryMethod") ||
-        !query.hasOwnProperty("maxSeats") ||
-        !query.hasOwnProperty("availableSeats") ||
-        !query.hasOwnProperty("id") ||
+        !query.hasOwnProperty("maxSeats") || isNaN(Number(query.maxSeats)) ||
+        !query.hasOwnProperty("availableSeats") || isNaN(Number(query.availableSeats)) ||
+        !query.hasOwnProperty("id") || isNaN(Number(query.id)) ||
         !query.hasOwnProperty("deleted") ||
         !(query.deleted === false)
     ) {
@@ -27,6 +27,20 @@ async function PutCourse(token, jsonObj) {
             "status": 400,
             "message": "Bad Request"
         });
+    }
+
+    let registrations = await lsh.read("course-registration", {course: query.id, deleted: false})
+        .then((data) => {
+            return data;
+        });
+
+    if (registrations.status === 200) {
+        if (registrations.data.length !== Number(query.maxSeats) - Number(query.availableSeats)) {
+            return Promise.reject({
+                "status": 400,
+                "message": "Bad Request"
+            });
+        }
     }
 
     if (userType === "admins") {

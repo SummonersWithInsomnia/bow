@@ -47,7 +47,6 @@ function StudentListByCourseComponent({id}) {
         try {
             if (result.status === 200) {
                 setData(result.data);
-                console.log(result.data);
             } else {
                 setCourseError("The course does not exist.")
             }
