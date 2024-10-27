@@ -31,7 +31,7 @@ function CourseDetailsComponent({id}) {
     }
 
     const getCourseData = async () => {
-        let result = await udc.get("courses", "", {id: Number(id)})
+        let result = await udc.post("courses", "", {id: Number(id)})
             .then((data) => {
                 return data
             })
@@ -39,10 +39,10 @@ function CourseDetailsComponent({id}) {
                 return data
             });
 
-        if (result.status === 200) {
+        if (result.status === 200 && result.data.length > 0) {
             setCourseData(result.data[0]);
         } else {
-            setCourseError("The course is not exist.")
+            setCourseError("The course does not exist.")
         }
     }
 
@@ -57,7 +57,7 @@ function CourseDetailsComponent({id}) {
                 )
             }
             {
-                courseData && (
+                courseData.length > 0 && (
                     <>
                         <div>
                             <h2>{courseData.name}</h2>

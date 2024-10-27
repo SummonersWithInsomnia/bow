@@ -20,7 +20,7 @@ function CoursesComponent() {
 
 
     const getCourseData = async () => {
-        let result = await udc.get("courses", "", {})
+        let result = await udc.post("courses", "", {})
             .then((data) => {
                 return data
             })
