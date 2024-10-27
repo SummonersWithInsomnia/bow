@@ -36,7 +36,7 @@ function DeleteCourseComponent({id}) {
     }
 
     const getCourseData = async () => {
-        let result = await udc.get("courses", "", {id: Number(id)})
+        let result = await udc.post("courses", "", {id: Number(id)})
             .then((data) => {
                 return data
             })
@@ -47,7 +47,7 @@ function DeleteCourseComponent({id}) {
         if (result.status === 200) {
             setCourseData(result.data[0]);
         } else {
-            setCourseError("The course is not exist.")
+            setCourseError("The course does not exist.")
         }
     }
 
