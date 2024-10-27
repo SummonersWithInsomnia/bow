@@ -85,6 +85,10 @@ async function PostSearchStudentList(token, jsonObj) {
                     optimisedResult = result.data;
                 }
 
+                for (let i = 0; i < optimisedResult.length; i++) {
+                    delete optimisedResult[i].password;
+                }
+
                 return Promise.resolve({
                     "status": 200,
                     "message": "OK",
