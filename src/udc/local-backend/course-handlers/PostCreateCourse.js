@@ -48,7 +48,7 @@ async function PostCreateCourse(token, jsonObj) {
             if (createNewCourseResult.status === 200) {
                 return Promise.resolve({
                     "status": 200,
-                    "message": "Course is Created Successfully"
+                    "message": "Course Created Successfully"
                 });
             } else {
                 return Promise.reject({

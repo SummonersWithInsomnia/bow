@@ -21,13 +21,13 @@ function CreateCourseComponent() {
     useEffect(() => {
 
         if (!isValidEndDate()) {
-            setEndDateTip("End date cannot be earlier than start date.");
+            setEndDateTip("The end date cannot be earlier than the start date.");
         } else {
             setEndDateTip("");
         }
 
         if (!isValidEndTime()) {
-            setEndTimeTip("End time cannot be earlier than start time.");
+            setEndTimeTip("The end time cannot be earlier than the start time.");
         } else {
             setEndTimeTip("");
         }
