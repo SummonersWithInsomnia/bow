@@ -57,7 +57,7 @@ function CourseDetailsComponent({id}) {
                 )
             }
             {
-                courseData.length > 0 && (
+                Object.keys(courseData).length > 0 && (
                     <>
                         <div>
                             <h2>{courseData.name}</h2>
