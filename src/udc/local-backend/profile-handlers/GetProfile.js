@@ -39,7 +39,6 @@ async function GetProfile(token, jsonObj) {
             return Promise.resolve({
                 "status": 200,
                 "message": "OK",
-                "userType": "admin",
                 "userdata": {
                     id: result.data[0].id,
                     firstName: result.data[0].firstName,
