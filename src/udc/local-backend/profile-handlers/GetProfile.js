@@ -14,7 +14,6 @@ async function GetProfile(token, jsonObj) {
                 "status": 200,
                 "message": "OK",
                 "userdata": {
-                    id: result.data[0].id,
                     firstName: result.data[0].firstName,
                     lastName: result.data[0].lastName,
                     email: result.data[0].email,
@@ -40,7 +39,6 @@ async function GetProfile(token, jsonObj) {
                 "status": 200,
                 "message": "OK",
                 "userdata": {
-                    id: result.data[0].id,
                     firstName: result.data[0].firstName,
                     lastName: result.data[0].lastName,
                     email: result.data[0].email,
