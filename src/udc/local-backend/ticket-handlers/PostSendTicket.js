@@ -22,22 +22,13 @@ async function PostSendTicket(token, jsonObj) {
                     return data;
                 });
             if (result.status === 200 && result.data.length === 1 && result.data[0].id === uid) {
-                let hourString = new Date().toISOString().substring(11, 13);
-                let hour = Number(hourString);
-                hour = hour + 24 - 6;
-                if (hour >= 24) {
-                    hour -= 24;
-                }
-                if (hour < 10) {
-                    hourString = "0" + hour;
-                } else {
-                    hourString = hour.toString();
-                }
+                let now = new Date();
+                now.setHours(now.getHours() - 6);
 
                 let createTicketResult = await lsh.create("tickets", {
                     student: result.data[0].id,
-                    createdDate: new Date().toISOString().substring(0, 10),
-                    createdTime: hourString + new Date().toISOString().substring(13, 19),
+                    createdDate: now.toISOString().substring(0, 10),
+                    createdTime: now.toISOString().substring(11, 19),
                     text: query.text
                 })
 
