@@ -29,7 +29,7 @@ function App() {
 
     // To initialise all datasets of local storage
     // Please do not access the datasets directly
-    lsh.initAllDatasets();
+    // lsh.initAllDatasets();
 
     return (
         <div className="App">

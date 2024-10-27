@@ -67,7 +67,7 @@ function CoursesComponent() {
     }, [searchQuery]);
 
     const getSearchCourseData = async (searchQuery) => {
-        let result = await udc.get("courses", "", searchQuery)
+        let result = await udc.post("courses", "", searchQuery)
             .then((data) => {
                 return data;
             })

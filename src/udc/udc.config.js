@@ -4,6 +4,12 @@ const LOCAL_BACKEND = {
     endpoint: ""
 };
 
+// Dev Backend
+const DEV_BACKEND = {
+    type: "Backend",
+    endpoint: "http://localhost:3999/"
+};
+
 // Backend
 const BACKEND = {
     type: "Backend",
@@ -11,4 +17,4 @@ const BACKEND = {
 };
 
 // Current UDC Source
-export const UDC_SOURCE = LOCAL_BACKEND;
+export const UDC_SOURCE = DEV_BACKEND;

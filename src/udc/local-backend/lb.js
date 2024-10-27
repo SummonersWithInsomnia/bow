@@ -25,31 +25,28 @@ export class lb {
         throw new Error("Cannot instantiate lb class");
     }
 
-    static async get(path, token, jsonObj) {
+    static async get(path, token) {
         switch (path) {
-            case "courses":
-                return await GetCourses(token, jsonObj);
-
             case "dashboard":
-                return await GetDashboard(token, jsonObj);
+                return await GetDashboard(token);
 
             case "profile":
-                return await GetProfile(token, jsonObj);
+                return await GetProfile(token);
 
             case "user":
-                return await GetUserInfo(token, jsonObj);
+                return await GetUserInfo(token);
 
             case "tickets":
-                return await GetTickets(token, jsonObj);
+                return await GetTickets(token);
 
             case "student-list":
-                return await GetStudentList(token, jsonObj);
+                return await GetStudentList(token);
 
             case "student-list-by-course":
-                return await GetStudentListByCourse(token, jsonObj);
+                return await GetStudentListByCourse(token);
 
             case "my-courses":
-                return await GetMyCourses(token, jsonObj);
+                return await GetMyCourses(token);
 
             default:
                 return await UnreachablePath();
@@ -58,6 +55,9 @@ export class lb {
 
     static async post(path, token, jsonObj) {
         switch (path) {
+            case "courses":
+                return await GetCourses(token, jsonObj);
+
             case "login-student":
                 return await PostLoginStudent(token, jsonObj);
 

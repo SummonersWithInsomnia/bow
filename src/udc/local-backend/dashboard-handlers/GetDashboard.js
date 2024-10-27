@@ -1,6 +1,6 @@
 import {lsh} from "../lsh/lsh";
 
-async function GetDashboard(token, jsonObj) {
+async function GetDashboard(token) {
     let userType = token.match("student") ? "students" : token.match("admin") ? "admins" : "";
     if (userType === "students") {
         let uid = parseInt(token.substring(7));
